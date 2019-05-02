@@ -57,10 +57,8 @@ aliases:
         - staging.tmp
         - trying.tmp
 
-
-  - &yarn
-    |
-      yarn install --non-interactive --cache-folder ~/.cache/yarn --ignore-engines
+  - &yarn |
+    yarn install --non-interactive --cache-folder ~/.cache/yarn --ignore-engines
 
   - &lint
 version: 2
@@ -88,10 +86,10 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
-      - run:
-          name: Lint
-          command: yarn lint
-          when: always
+      #- run:
+      #name: Lint
+      #command: yarn lint
+      #when: always
 
       - save_cache:
           paths:
@@ -99,5 +97,3 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn start
-
-    
