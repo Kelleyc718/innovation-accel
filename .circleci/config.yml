@@ -2,6 +2,67 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
+aliases:
+  - &restore-yarn-cache-8
+    keys:
+      - v4-yarn-8-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      # Fallback in case checksum fails
+      - v4-yarn-8-{{ .Branch }}-
+
+  - &save-yarn-cache-8
+    paths:
+      - node_modules
+      - ~/.cache/yarn
+    key: v4-yarn-8-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  - &restore-yarn-cache-9
+    keys:
+      - v4-yarn-9-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      # Fallback in case checksum fails
+      - v4-yarn-9-{{ .Branch }}-
+
+  - &save-yarn-cache-9
+    paths:
+      - node_modules
+      - ~/.cache/yarn
+    key: v4-yarn-9-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  - &restore-yarn-cache-10
+    keys:
+      - v4-yarn-10-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      # Fallback in case checksum fails
+      - v4-yarn-10-{{ .Branch }}-
+
+  - &save-yarn-cache-10
+    paths:
+      - node_modules
+      - ~/.cache/yarn
+    key: v4-yarn-10-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  - &restore-yarn-cache-11
+    keys:
+      - v4-yarn-11-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      # Fallback in case checksum fails
+      - v4-yarn-11-{{ .Branch }}-
+
+  - &save-yarn-cache-11
+    paths:
+      - node_modules
+      - ~/.cache/yarn
+    key: v4-yarn-11-{{ .Branch }}-{{ checksum "yarn.lock" }}
+
+  - &filter-ignore-bors-tmp
+    branches:
+      ignore:
+        - staging.tmp
+        - trying.tmp
+
+
+  - &yarn
+    |
+      yarn install --non-interactive --cache-folder ~/.cache/yarn --ignore-engines
+
+  - &lint
 version: 2
 jobs:
   build:
@@ -36,7 +97,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-          
+
       - run: yarn start
 
     
