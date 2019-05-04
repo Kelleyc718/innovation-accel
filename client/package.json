@@ -7,15 +7,32 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "yarn lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelleyc718/innovation-accel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kelleyc718/innovation-accel/issues"
+  },
+  "homepage": "https://github.com/Kelleyc718/innovation-accel#readme",
   "browserslist": {
     "production": [
       ">0.2%",
