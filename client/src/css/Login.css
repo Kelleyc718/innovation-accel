@@ -1,0 +1,61 @@
+.login-form {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/oil_rig.jpg");
+  min-height: 100%;
+}
+
+div.ui.center.aligned.middle.grid {
+  height: 100%;
+}
+
+div.column.loginColumn {
+  max-width: 450px;
+}
+
+.ui.segment {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
+
+.ui.header {
+  margin: 0 1rem;
+}
+
+.ui.message {
+  color: white;
+  border-radius: 10px;
+}
+
+.ui.message > :last-child {
+  margin: 1em;
+}
+
+body > div,
+body > div > div,
+body > div > div > div.login-form {
+  height: 100vh;
+}
+
+a {
+  color: #48fdff;
+}
+main {
+  flex: 1 0 auto;
+}
+
+.input-field input[type="date"]:focus + label,
+.input-field input[type="text"]:focus + label,
+.input-field input[type="email"]:focus + label,
+.input-field input[type="password"]:focus + label {
+  color: #e91e63;
+}
+
+.input-field input[type="date"]:focus,
+.input-field input[type="text"]:focus,
+.input-field input[type="email"]:focus,
+.input-field input[type="password"]:focus {
+  border-bottom: 2px solid #e91e63;
+  box-shadow: none;
+}
