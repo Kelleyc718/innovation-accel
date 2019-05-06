@@ -17,6 +17,7 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
+// this creates this express app
 const app = express();
 
 // DO NOT HAVE TO USE THIS SECTION SINCE CHRIS WAS USING EXPRESS-SESSION
