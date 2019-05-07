@@ -19,7 +19,7 @@ RUN npm install
 COPY . /usr/scr/app
 
 #CMD [ "npm", "run-script build" ]
-RUN npm run build
+RUN npm run-script build
 
 ##DEPLOY##
 FROM nginx:1.12-alpine
