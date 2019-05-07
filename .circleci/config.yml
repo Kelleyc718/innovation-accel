@@ -79,21 +79,30 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+      #- restore_cache:
+      #    keys:
+      #      - v1-dependencies-{{ checksum "package.json" }}
+      #      # fallback to using the latest cache if no exact match is found
+      #      - v1-dependencies-
 
-      - run: yarn install
+      #- run: yarn install
+
       #- run:
       #name: Lint
       #command: yarn lint
       #when: always
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      #- save_cache:
+      #    paths:
+      #      - node_modules
+      #    key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn start
+      #- run: yarn start
+
+      - run:
+          name: Disable host key checking
+          command: bash .circleci/disable_host_key_checking.sh
+
+      - run:
+          name:
+          command: ssh ssh_user@frontend_url 'bash -s' < .circleci/deploy_server.sh
