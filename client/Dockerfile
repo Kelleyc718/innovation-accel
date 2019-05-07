@@ -16,14 +16,19 @@ RUN yarn install
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY . /usr/scr/app
+COPY . .
+
+RUN pwd && ls -la
+
 
 #CMD [ "npm", "run-script build" ]
 RUN yarn build
 
 ##DEPLOY##
 FROM nginx:1.12-alpine
+RUN pwd
 WORKDIR /usr/src/app
+RUN pwd
 COPY --from=build /usr/src/app/build/ /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
