@@ -2,7 +2,7 @@
 FROM node:8 as build-deps
 
 # Create app directory
-WORKDIR /home/ubuntu/app/client
+WORKDIR /usr/src/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -21,6 +21,6 @@ CMD [ "npm", "build" ]
 
 ##DEPLOY##
 FROM nginx:1.12-alpine
-COPY --from=build-deps /home/ubuntu/app/client/build /usr/share/nginx/html
+COPY --from=build-deps ./build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
