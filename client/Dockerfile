@@ -11,15 +11,15 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json /usr/src/app/
 
-RUN npm install
+RUN yarn install
 # If you are building your code for production
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY ./ /usr/scr/app
+COPY . /usr/scr/app
 
 #CMD [ "npm", "run-script build" ]
-RUN npm run build
+RUN yarn build
 
 ##DEPLOY##
 FROM nginx:1.12-alpine
