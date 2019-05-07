@@ -105,4 +105,4 @@ jobs:
 
       - run:
           name:
-          command: ssh ssh_user@frontend_url 'bash -s' < .circleci/deploy_server.sh
+          command: ssh $ssh_user@$frontend_url 'bash -s' < .circleci/deploy_server.sh
