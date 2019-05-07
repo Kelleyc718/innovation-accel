@@ -1,5 +1,5 @@
 ## BUILD##
-FROM node:8 as build-deps
+FROM node:8
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -24,6 +24,6 @@ FROM nginx:1.12-alpine
 RUN pwd
 RUN ls -la
 WORKDIR /usr/src/app
-COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
+COPY --from=0 /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
