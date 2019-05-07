@@ -1,6 +1,8 @@
 ## BUILD##
 FROM node:8
 
+RUN sudo mkdir /usr/src/app
+
 # Create app directory
 WORKDIR /usr/src/app
 
