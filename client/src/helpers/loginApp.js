@@ -1,17 +1,17 @@
 import IdcsAuthnSDK from "../helpers/IdcsAuthnSDK";
-import { uri } from "./config";
+import { uri } from "./config-example";
 
 function LoginApp() {
   this.baseUri = uri;
   console.log(this.baseUri);
 
-  this.logMsg = function(msg) {
+  this.logMsg = function (msg) {
     if (window.console && this.debugEnabled) {
       console.log("LoginApp: " + msg);
     }
   }; // this.logMsg
 
-  this.mask = function(data) {
+  this.mask = function (data) {
     var propsToMask = [
       "username",
       "password",
@@ -67,7 +67,7 @@ function LoginApp() {
     }
   }; //this.mask
 
-  this.nextOperation = function(payload) {
+  this.nextOperation = function (payload) {
     this.logdata("nextOperation: " + this.mask(payload));
 
     if (payload.requestState && payload.nextOp) {
@@ -87,7 +87,7 @@ function LoginApp() {
         } else if (payload.nextOp.indexOf("enrollment") === -1) {
           // Alternative factors case
           let which = Object.keys(self.AuthenticationFactorInfo).filter(
-            function(x) {
+            function (x) {
               return x in payload;
             }
           );
@@ -106,26 +106,26 @@ function LoginApp() {
                 // displayName is on payload for PUSH only when PUSH is chosen as an alternative method.
                 this.logdata(
                   "About to display form for " +
-                    which[0] +
-                    "[submitCreds] with payload " +
-                    this.mask(payload)
+                  which[0] +
+                  "[submitCreds] with payload " +
+                  this.mask(payload)
                 );
                 this.displayForm(which[0], "submitCreds", payload);
               } else {
                 this.logdata(
                   "Waiting on " +
-                    which[0] +
-                    "[submitCreds] with payload " +
-                    this.mask(payload)
+                  which[0] +
+                  "[submitCreds] with payload " +
+                  this.mask(payload)
                 );
               }
             }
           } else {
             this.logdata(
               "About to display form for " +
-                which[0] +
-                "[submitCreds] with payload " +
-                this.mask(payload)
+              which[0] +
+              "[submitCreds] with payload " +
+              this.mask(payload)
             );
             this.displayForm(which[0], "submitCreds", payload);
           }
@@ -136,7 +136,7 @@ function LoginApp() {
           payload.TOTP
         ) {
           let which = Object.keys(self.AuthenticationFactorInfo).filter(
-            function(x) {
+            function (x) {
               return x in payload;
             }
           );
@@ -144,14 +144,14 @@ function LoginApp() {
           this.displayForm(which[0], "enrollment", payload);
         } else if (payload.nextOp[1] === "enrollment") {
           let which = Object.keys(self.AuthenticationFactorInfo).filter(
-            function(x) {
+            function (x) {
               return x in payload;
             }
           );
           this.displayForm(which[0], "enrollment", payload);
         } else if (payload.SMS && payload.SMS.credentials[0] === "otpCode") {
           let which = Object.keys(self.AuthenticationFactorInfo).filter(
-            function(x) {
+            function (x) {
               return x in payload;
             }
           );
@@ -172,19 +172,19 @@ function LoginApp() {
     }
   }; // this.nextOperation
 
-  this.getAccessToken = function() {
+  this.getAccessToken = function () {
     return sessionStorage.getItem("signinAT");
   };
 
-  this.isIDPUserInIDCS = function() {
+  this.isIDPUserInIDCS = function () {
     return sessionStorage.getItem("isIDPUserInIDCS");
   };
 
-  this.getIDPAuthnToken = function() {
+  this.getIDPAuthnToken = function () {
     return sessionStorage.getItem("IDPAuthnToken");
   };
 
-  this.getSocialData = function() {
+  this.getSocialData = function () {
     var socialData = {};
     socialData.requestState = this.getRequestState();
     socialData.userData = JSON.parse(
@@ -193,7 +193,7 @@ function LoginApp() {
     return socialData;
   };
 
-  this.isSocialRegistrationRequired = function() {
+  this.isSocialRegistrationRequired = function () {
     var isRequired = sessionStorage.getItem("social.needToRegister");
     if (isRequired && isRequired === "true") {
       return true;
@@ -202,33 +202,33 @@ function LoginApp() {
     }
   };
 
-  this.removeSocialData = function() {
+  this.removeSocialData = function () {
     sessionStorage.removeItem("social.scimUserAttrs");
     sessionStorage.removeItem("social.needToRegister");
   };
 
-  this.setRequestState = function(rs) {
+  this.setRequestState = function (rs) {
     sessionStorage.setItem("requestState", rs);
   };
 
-  this.getRequestState = function() {
+  this.getRequestState = function () {
     return sessionStorage.getItem("requestState");
   };
 
-  this.getClientId = function() {
+  this.getClientId = function () {
     return sessionStorage.getItem("clientId");
   };
 
-  this.getInitialState = function() {
+  this.getInitialState = function () {
     return sessionStorage.getItem("initialState");
   };
 
   var self = this;
-  this.getOperation = function() {
+  this.getOperation = function () {
     return sessionStorage.getItem("op");
   };
 
-  this.getToken = function() {
+  this.getToken = function () {
     return decodeURIComponent(sessionStorage.getItem("token"));
   };
 
