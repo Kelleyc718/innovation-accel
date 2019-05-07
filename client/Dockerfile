@@ -1,5 +1,5 @@
 ## BUILD##
-FROM node:8 as build-deps
+FROM node:8
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,13 +16,14 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-CMD [ "npm", "build" ]
+CMD [ "npm", "run-script build" ]
 
 
 ##DEPLOY##
 FROM nginx:1.12-alpine
 RUN pwd
 RUN ls -la
-COPY --from=build-deps /usr/src/app/build /usr/share/nginx/html
+WORKDIR /usr/src/app
+COPY --from=0 /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
