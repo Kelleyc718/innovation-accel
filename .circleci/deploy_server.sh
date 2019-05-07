@@ -1,4 +1,4 @@
-docker-compose down
+sudo docker-compose down
 sudo rm -rf /home/ubuntu/app
 mkdir /home/ubuntu/app
 cd /home/ubuntu/app
