@@ -4,5 +4,5 @@
 // environment variables are passed from host where 
 // docker-compose is run to container via the 
 // docker-compose file
-export const uri = IDCS_URI;
-export const signUpUri = IDCS_SIGNUP_URI;
+export const uri = process.env.IDCS_URI || '';
+export const signUpUri = process.env.IDCS_SIGNUP_URI || '';
