@@ -4,6 +4,6 @@
 // docker-compose file
 
 module.exports = {
-    mongoURI: DB_URI,
-    cookieKey: DB_PASS
+    mongoURI: process.env.DB_URI || '',
+    cookieKey: process.env.DB_PASS || ''
 };

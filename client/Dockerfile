@@ -18,9 +18,6 @@ RUN yarn install
 # Bundle app source
 COPY . .
 
-RUN pwd && ls -la
-
-
 #CMD [ "npm", "run-script build" ]
 RUN yarn build
 
