@@ -1,13 +1,13 @@
 version: "3"
 
 services:
-  #  backend:
-  #    build: ./server
-  #    ports:
-  #      - 4000:8080
-  #    environment:
-  #      - DB_URI
-  #      - DB_PASS
+  backend:
+    build: ./server
+    ports:
+      - 4000:8080
+    environment:
+      - DB_URI
+      - DB_PASS
   frontend:
     build: ./client
     ports:
