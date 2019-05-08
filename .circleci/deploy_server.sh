@@ -1,7 +1,7 @@
+cd /home/ubuntu/app/innovation-accel
 sudo docker-compose down
-sudo rm -rf /home/ubuntu/app
-mkdir /home/ubuntu/app
-cd /home/ubuntu/app
+cd ..
+sudo rm -rf /home/ubuntu/app/innovation-accel
 git clone https://github.com/Kelleyc718/innovation-accel.git
 cd innovation-accel
-sudo docker-compose up
+sudo docker-compose up -d
