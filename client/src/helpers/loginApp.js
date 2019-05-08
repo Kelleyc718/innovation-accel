@@ -1,5 +1,5 @@
 import IdcsAuthnSDK from "../helpers/IdcsAuthnSDK";
-import { uri } from "./config-example";
+import { uri } from "./config";
 
 function LoginApp() {
   this.baseUri = uri;
