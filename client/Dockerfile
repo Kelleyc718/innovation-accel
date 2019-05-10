@@ -23,7 +23,8 @@ RUN yarn build
 
 ##DEPLOY##
 FROM nginx:1.12-alpine
-RUN pwd
+RUN rm /etc/nginx/conf.d/default.conf
+COPY ./nginxReactRouter.conf /etc/nginx/conf.d/nginxReactRouter.conf
 WORKDIR /usr/src/app
 RUN pwd
 COPY --from=build /usr/src/app/build/ /usr/share/nginx/html
