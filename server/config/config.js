@@ -1,8 +1,46 @@
-// environment variables are passed from host where 
-// docker-compose is run to container via the 
+// environment variables are passed from host where
+// docker-compose is run to container via the
 // docker-compose file
 
-module.exports = {
-    mongoURI: process.env.DB_URI || '',
-    cookieKey: process.env.DB_PASS || ''
+// module.exports = {
+//     mongoURI: process.env.DB_URI || '',
+//     cookieKey: process.env.DB_PASS || ''
+// };
+
+/**
+ * Sign-In Application Client Id and Client Secret
+ */
+
+const signInApp = {
+  ClientId: process.env.SIGN_IN_CLIENT_ID,
+  ClientSecret: process.env.CLIENT_SECRET
 };
+
+const ids = {
+  oracle: {
+    ClientId: process.env.ORACLE_CLIENT_ID,
+    ClientSecret: process.env.ORACLE_CLIENT_SECRET,
+    ClientTenant: process.env.ORACLE_CLIENT_TENANT,
+    ClientSelfReg: process.env.ORACLE_CLIENT_SELF_REG,
+    IDCSHost: process.env.ORACLE_CLIENT_IDCS_HOST,
+    AudienceServiceUrl: process.env.ORACLE_CLIENT_AUDIENCE_SERVICE_URI,
+    TokenIssuer: "https://identity.oraclecloud.com/",
+    scope: "urn:opc:idm:t.user.me openid",
+    logoutSufix: "/oauth2/v1/userlogout",
+    redirectURL: process.env.ORACLE_REDIRECT,
+    tokenURL: process.env.ORACLE_TOKEN_URL
+  },
+  server: {
+    APP_DEFAULT_PORT: "5000",
+    IDCS_COOKIE_NAME: "idcs_user_assertion",
+    IDCS_STRATEGY_NAME: "IDCSOIDC",
+    APP_SEC:
+      "Basic " +
+      Buffer.from(signInApp.ClientId + ":" + signInApp.ClientSecret).toString(
+        "base64"
+      ),
+    MONGO_URI: process.env.MONGO_URI
+  }
+};
+
+module.exports = ids;
