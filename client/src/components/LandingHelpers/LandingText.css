@@ -1,0 +1,68 @@
+.landing-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.1em;
+  margin-bottom: 200px !important;
+  text-align: center;
+}
+
+.slide1,
+.slide2,
+.slide3 {
+  position: absolute;
+}
+.slide1 {
+  animation: fade 17s infinite;
+  -webkit-animation: fade 17s infinite;
+}
+.slide2 {
+  animation: fade2 17s infinite;
+  -webkit-animation: fade2 17s infinite;
+}
+.slide3 {
+  animation: fade3 17s infinite;
+  -webkit-animation: fade3 17s infinite;
+}
+@keyframes fade {
+  0% {
+    opacity: 0.8;
+  }
+  33.333% {
+    opacity: 0;
+  }
+  66.666% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes fade2 {
+  0% {
+    opacity: 0;
+  }
+  33.333% {
+    opacity: 0.8;
+  }
+  66.666% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade3 {
+  0% {
+    opacity: 0;
+  }
+  33.333% {
+    opacity: 0;
+  }
+  66.666% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
