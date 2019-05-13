@@ -6,7 +6,7 @@ import { Button } from "semantic-ui-react";
 const Navbar = props => {
   return (
     <div className="nav">
-      <Link to="/login">
+      <Link to="/auth">
         <Button className="loginBtn" basic inverted color="red">
           Login
         </Button>

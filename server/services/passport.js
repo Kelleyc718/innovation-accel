@@ -3,7 +3,7 @@
 // ********************************
 
 const passport = require("passport"),
-  User = require("../models/User"),
+  User = require("../models/user"),
   config = require("../config/config"),
   JwtStrategy = require("passport-jwt").Strategy,
   ExtractJWT = require("passport-jwt").ExtractJwt,

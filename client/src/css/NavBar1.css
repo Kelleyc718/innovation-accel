@@ -1,0 +1,29 @@
+/* For Chris Kelly code Nav.js */
+
+.navBar.brand-logo {
+  margin: auto;
+}
+
+.ui.item.simple.dropdown {
+  font-size: 1.23em;
+}
+
+.ui.blue.inverted.button.signout {
+  background-color: #1c9cd1 !important;
+  color: white !important;
+  margin: auto;
+}
+
+.header.item {
+  grid-row: 1;
+  grid-column: 1;
+  font-size: 2.25em;
+}
+
+.item {
+  font-size: 1.25em;
+}
+
+.item:last-child {
+  grid-column: 5;
+}
