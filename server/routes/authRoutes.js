@@ -42,6 +42,8 @@ const requireLogin = passport.authenticate("local", {
  * @returns redirect url associated with IDCS
  */
 router.get("/auth", (req, res, next) => {
+  console.log("I am hitting the url");
+  console.log("This is the info we are looking for: ", config.oracle);
   res.redirect("" + config.oracle.tokenURL + "");
 });
 
@@ -51,6 +53,9 @@ router.get("/auth", (req, res, next) => {
  * @returns local login page served by client application
  */
 router.post("/auth", (req, res, next) => {
+  console.log("this is happening now!");
+  console.log("authentications is: ", authentication);
+
   authentication.idcsAuth(req, res, next);
 });
 
