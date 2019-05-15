@@ -1,13 +1,13 @@
 import "../css/Landing.css";
 import React from "react";
-import Nav from "./Nav";
+import Navbar from "./Navbar";
 import LandingText from "./LandingHelpers/LandingText";
 import OilRigModel from "./LandingHelpers/OilRigModel";
 
 const Landing = props => {
   return (
     <React.Fragment>
-      <Nav />
+      <Navbar />
       <div className="stars" />
       <div className="twinkling landing-body">
         <LandingText />
