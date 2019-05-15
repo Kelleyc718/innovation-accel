@@ -3,7 +3,6 @@ import { uri } from "./config";
 
 function LoginApp() {
   this.baseUri = uri;
-  console.log(this.baseUri);
 
   this.logMsg = function (msg) {
     if (window.console && this.debugEnabled) {
