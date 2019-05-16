@@ -4,7 +4,7 @@ services:
   backend:
     build: ./server
     ports:
-      - 4000:8080
+      - 5000:8080
     environment:
       - DB_URI
       - DB_PASS
@@ -12,6 +12,3 @@ services:
     build: ./client
     ports:
       - 80:80
-    environment:
-      - IDCS_URI
-      - IDCS_SIGNUP_URI
