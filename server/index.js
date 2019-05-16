@@ -6,7 +6,7 @@
 // // const passport = require("passport");
 // const keys = require("./config/config");
 // // this will ensure that whenever our app loads up, the User model collection we created is available
-// require("./models/User");
+// require("./models/user");
 // //this will be importing the passport into our index.js file
 // // require("./services/passport");
 //
