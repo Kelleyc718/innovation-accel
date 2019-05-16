@@ -4,4 +4,4 @@ cd ..
 sudo rm -rf /home/ubuntu/app/innovation-accel
 git clone https://github.com/Kelleyc718/innovation-accel.git
 cd innovation-accel
-sudo docker-compose up -d
+sudo docker-compose up --build -d
