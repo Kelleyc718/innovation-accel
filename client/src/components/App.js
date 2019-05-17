@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
-// import Navbar from "./Navbar";
 import Landing from "./Landing";
 import Login from "./Login";
 import LoginCallback from "./LoginCallback";

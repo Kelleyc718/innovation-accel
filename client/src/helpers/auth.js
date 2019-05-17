@@ -14,6 +14,6 @@ export const requireAuth = (props, next) => {
 };
 
 export const logout = next => {
-  localStorage.clear("user");
+  localStorage.clear();
   next();
 };
