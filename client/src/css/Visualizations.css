@@ -2,36 +2,30 @@
   height: 0px !important;
 }
 
-.pageLayout {
+/* .pageLayout {
   background-color: black;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-
-.visualizationsCanvas {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 100px;
-  background-color: rgba(255, 255, 255, 0.03);
-  width: 90%;
-  min-height: 85vh;
-  box-sizing: border-box;
-  box-shadow: 2px 2px 25px 10px rgba(255, 255, 255, 0.1);
   overflow-y: scroll;
-}
+} */
 
-.dvGraph {
+.viz {
+  /* display: inline-block; */
   height: 300px;
-  width: 300px;
-  margin: 50px;
+  width: 55%;
+  /* box-sizing: border-box; */
+  margin: 10px;
 }
 
-/* this is hte id that appears to be opooing up */
-#_dvtActiveElement390492669 {
-  max-height: 200px;
+.viz2 {
+  /* display: inline-block; */
+  height: 300px;
+  width: 40%;
+  /* box-sizing: border-box; */
+  margin: 10px;
 }
