@@ -16,7 +16,7 @@ services:
       - ORACLE_CLIENT_SECRET
       - ORACLE_CLIENT_ID
       - CLIENT_SECRET
-      - ORACLE_CLIENT_ID
+      - SIGN_IN_CLIENT_ID
   frontend:
     build: ./client
     ports:
