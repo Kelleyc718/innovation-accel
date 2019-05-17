@@ -6,8 +6,17 @@ services:
     ports:
       - 5000:8080
     environment:
-      - DB_URI
-      - DB_PASS
+      - MONGO_URI
+      - ORACLE_TOKEN_URL
+      - ORACLE_REDIRECT
+      - ORACLE_CLIENT_AUDIENCE_SERVICE_URI
+      - ORACLE_CLIENT_IDCS_HOST
+      - ORACLE_CLIENT_SELF_REG
+      - ORACLE_CLIENT_TENANT
+      - ORACLE_CLIENT_SECRET
+      - ORACLE_CLIENT_ID
+      - CLIENT_SECRET
+      - ORACLE_CLIENT_ID
   frontend:
     build: ./client
     ports:
