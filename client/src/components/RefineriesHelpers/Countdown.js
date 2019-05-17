@@ -12,13 +12,16 @@ class Countdown extends Component {
     };
   }
 
-  // componentWillUnmount() {
-  //   this.getTimeUntil(this.props.deadline);
-  // }
-
   componentDidMount() {
     this.getTimeUntil(this.props.deadline);
-    setInterval(() => this.getTimeUntil(this.props.deadline), 1000);
+    this.interval = setInterval(
+      () => this.getTimeUntil(this.props.deadline),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   leadingZero(num) {
