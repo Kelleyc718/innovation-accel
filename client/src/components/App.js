@@ -8,6 +8,7 @@ import LoginCallback from "./LoginCallback";
 import Refineries from "./Refineries";
 import Visualizations from "./Visualizations";
 import Sensors from "./Sensors";
+import PrivateRoute from "../helpers/PrivateRoute";
 
 class App extends React.Component {
   render() {
@@ -18,9 +19,13 @@ class App extends React.Component {
             <Route path="/" exact component={Landing} />
             <Route path="/login" exact component={Login} />
             <Route path="/callback" component={LoginCallback} />
-            <Route path="/refineries" exact component={Refineries} />
-            <Route path="/refineries/:id" exact component={Visualizations} />
-            <Route path="/sensors" exact component={Sensors} />
+            <PrivateRoute path="/refineries" exact component={Refineries} />
+            <PrivateRoute
+              path="/refineries/:id"
+              exact
+              component={Visualizations}
+            />
+            <PrivateRoute path="/sensors" exact component={Sensors} />
           </Switch>
         </Router>
       </AuthProvider>
