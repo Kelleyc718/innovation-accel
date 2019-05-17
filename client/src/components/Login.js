@@ -89,10 +89,6 @@ const Login = () => {
               <div>{error}</div>
             </Dimmer.Dimmable>
           </Form>
-          <Message>
-            New to us?
-            <Link to="">Sign Up</Link>
-          </Message>
         </Grid.Column>
       </Grid>
     </div>

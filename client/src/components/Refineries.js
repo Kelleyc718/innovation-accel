@@ -1,12 +1,16 @@
 import "../css/Refineries.css";
 import React from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+
 import LocationInfo from "./RefineriesHelpers/LocationInfo";
 
 const Refineries = props => {
   return (
     <div className="pageLayout">
       <Navbar />
+      <div>Im going to be the legend</div>
+      <Link to="/refineries/texas">Vizssss</Link>
       <div className="refineriesCanvas">
         <LocationInfo
           serviceDeadline="May 18 2019"
@@ -21,7 +25,6 @@ const Refineries = props => {
           maintenanceDeadline="May 25 2019"
         />
       </div>
-      <div>Im going to be the legend</div>
     </div>
   );
 };
