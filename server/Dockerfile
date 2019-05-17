@@ -36,6 +36,7 @@ RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle
 
 # install node runtime and npm 
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+RUN yum -y install nodejs
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
