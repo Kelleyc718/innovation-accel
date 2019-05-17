@@ -34,12 +34,8 @@ RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle
 # Uncomment if the tools package is added
 # ENV PATH=$PATH:/usr/lib/oracle/${release}.${update}/client64/bin
 
-# Update node repo to pull latest node release
-RUN sudo yum install -y oracle-nodejs-release-el7
-
 # install node runtime and npm 
-RUN yum install -y nodejs
-
+RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
