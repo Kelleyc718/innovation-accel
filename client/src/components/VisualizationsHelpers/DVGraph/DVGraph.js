@@ -1,10 +1,27 @@
 import React from "react";
 import styles from "./DVGraph.module.css";
-// import history from "../../../history";
 // eslint-disable-next-line
-import knockout from "./knockout";
+import axios from "axios";
+// import knockout from "./knockout";
 
 class DVGraph extends React.Component {
+  componentDidMount() {
+    return () => {
+      window.requirejs(
+        [
+          "knockout",
+          "ojs/ojcore",
+          "ojs/ojknockout",
+          "ojs/ojcomposite",
+          "jet-composites/oracle-dv/loader"
+        ],
+        function(ko) {
+          ko.applyBindings();
+        }
+      );
+    };
+  }
+
   render() {
     return (
       <div ref={elem => (this.dv = elem)} className={styles.DVGraph}>
