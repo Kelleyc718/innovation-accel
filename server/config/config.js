@@ -16,19 +16,22 @@ const signInApp = {
   ClientSecret: process.env.CLIENT_SECRET
 };
 
+const idcsTenancyId = process.env.IDCS_TENANCY_ID;
+const appCallbackUrl = encodeURIComponent(process.env.APP_CALLBACK_URL);
+
 const ids = {
   oracle: {
     ClientId: process.env.ORACLE_CLIENT_ID,
     ClientSecret: process.env.ORACLE_CLIENT_SECRET,
-    ClientTenant: process.env.ORACLE_CLIENT_TENANT,
+    //ClientTenant: process.env.ORACLE_CLIENT_TENANT,
     ClientSelfReg: process.env.ORACLE_CLIENT_SELF_REG,
-    IDCSHost: process.env.ORACLE_CLIENT_IDCS_HOST,
-    AudienceServiceUrl: process.env.ORACLE_CLIENT_AUDIENCE_SERVICE_URI,
-    TokenIssuer: "https://identity.oraclecloud.com/",
-    scope: "urn:opc:idm:t.user.me openid",
-    logoutSufix: "/oauth2/v1/userlogout",
-    redirectURL: process.env.ORACLE_REDIRECT,
-    tokenURL: process.env.ORACLE_TOKEN_URL
+    //IDCSHost: process.env.ORACLE_CLIENT_IDCS_HOST,
+    AudienceServiceUrl: `https://${idcsTenancyId}.identity.oraclecloud.com`,
+    //TokenIssuer: "https://identity.oraclecloud.com/",
+    //scope: "urn:opc:idm:t.user.me openid",
+    //logoutSufix: "/oauth2/v1/userlogout",
+    //redirectURL: process.env.ORACLE_REDIRECT,
+    tokenURL: `https://${idcsTenancyId}.identity.oraclecloud.com/oauth2/v1/authorize?client_id=${signInApp.ClientId}&response_type=code&redirect_uri=${appCallbackUrl}&scope=openid&state=1234`
   },
   server: {
     APP_DEFAULT_PORT: "5000",
