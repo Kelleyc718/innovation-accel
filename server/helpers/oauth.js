@@ -8,7 +8,7 @@ let neededScopes = [
   "urn:opc:idm:t.user.signin",
   "urn:opc:idm:t.user.mecreate",
   "urn:opc:idm:t.user.forgotpassword",
-  "urn:opc:idm:t.user.resetpassword",
+  //"urn:opc:idm:t.user.resetpassword",
   "urn:opc:idm:t.user.verifyemail"
 ];
 
