@@ -10,7 +10,7 @@ const proxy = require("http-proxy-middleware");
 // };
 
 const options = {
-  target: "http://132.145.168.237:8080/",
+  target: "http://132.145.168.237:8080",
   router: {
     // when request.headers.host == 'localhost:3000',
     // override target to 'http://localhost:8000'
