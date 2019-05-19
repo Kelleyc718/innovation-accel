@@ -2,25 +2,28 @@ import React from "react";
 import styles from "./DVGraph.module.css";
 // eslint-disable-next-line
 import axios from "axios";
-// import knockout from "./knockout";
+import knockout from "./knockout";
 
 class DVGraph extends React.Component {
-  componentDidMount() {
-    return () => {
-      window.requirejs(
-        [
-          "knockout",
-          "ojs/ojcore",
-          "ojs/ojknockout",
-          "ojs/ojcomposite",
-          "jet-composites/oracle-dv/loader"
-        ],
-        function(ko) {
-          ko.applyBindings();
-        }
-      );
-    };
-  }
+  // async componentDidMount() {
+  //   const res = await axios.get(
+  //     "https://innovateanalytics-orasenatdpltoci02.analytics.ocp.oraclecloud.com/dv/ui/"
+  //   );
+  //   return () => {
+  //     window.requirejs(
+  //       [
+  //         "knockout",
+  //         "ojs/ojcore",
+  //         "ojs/ojknockout",
+  //         "ojs/ojcomposite",
+  //         "jet-composites/oracle-dv/loader"
+  //       ],
+  //       function(ko) {
+  //         ko.applyBindings();
+  //       }
+  //     );
+  //   };
+  // }
 
   render() {
     return (

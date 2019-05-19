@@ -13,16 +13,16 @@ const Refineries = props => {
       <Link to="/refineries/texas">Vizssss</Link>
       <div className="refineriesCanvas">
         <LocationInfo
-          serviceDeadline="May 18 2019"
+          serviceDeadline="May 31 2019"
           maintenanceDeadline="May 31 2019"
         />
         <LocationInfo
-          serviceDeadline="May 19 2019"
+          serviceDeadline="May 31 2019"
           maintenanceDeadline="May 30 2019"
         />
         <LocationInfo
-          serviceDeadline="May 15 2019"
-          maintenanceDeadline="May 25 2019"
+          serviceDeadline="May 31 2019"
+          maintenanceDeadline="May 31 2019"
         />
       </div>
     </div>
