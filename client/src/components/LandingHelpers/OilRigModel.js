@@ -25,9 +25,9 @@ class OilRigModel extends Component {
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setClearColor("rgba(0,0,0)");
     renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
-    camera.position.set(300, 200, 500);
+    camera.position.set(14.272, 5.865, 9.908);
     const light = new THREE.PointLight(0xffffff, 1.9, 100);
-    light.position.set(0, 1, 0);
+    light.position.set(1.493, 8.845, -0.698);
 
     this.scene = scene;
     this.camera = camera;
@@ -53,9 +53,9 @@ class OilRigModel extends Component {
             this.scene.add(object);
             scene.add(object);
 
-            object.position.z -= 400;
-            object.position.y -= 300;
-            object.position.x -= 400;
+            object.position.z -= 50;
+            object.position.y -= 0;
+            object.position.x = 5;
 
             this.tl = new TimelineMax();
 
