@@ -27,7 +27,8 @@ const express = require("express"),
   router = express.Router(),
   config = require("../config/config"),
   passport = require("passport"),
-  authentication = require("../helpers/authentication");
+  authentication = require("../helpers/authentication"),
+  db = require("../database/connect");
 
 const requireAuth = passport.authenticate("jwt", {
   session: false
@@ -102,6 +103,11 @@ router.get("/resetpwd", (req, res, next) => {
     res.statusCode = 500;
     res.end("Could not understand your request.");
   }
+});
+
+router.get("/test", async (req, res) => {
+  let result = await db.run();
+  res.send(result);
 });
 
 module.exports = router;

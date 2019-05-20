@@ -43,6 +43,7 @@ RUN yum -y install nodejs
 # where available (npm@5+)
 COPY package*.json /usr/src/app/
 
+# add all application dependancies
 RUN npm install
 
 # If you are building your code for production
@@ -51,5 +52,12 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
+# put a copy of the instant client config for connecting to 
+# the database in the container in the default config location
+COPY /home/ubuntu/app/config/wallet /usr/lib/oracle/19.3/client64/lib/network/admin/
+
+# open port 5000 on the container
 EXPOSE 5000
+
+# run the application in the conatiner
 CMD [ "npm", "start" ]

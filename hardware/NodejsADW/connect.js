@@ -28,9 +28,11 @@
 
 var oracledb = require('oracledb');
 var dbConfig = require('./dbconfig.js');
+
 async function run() {
 
   let connection;
+  let result;
 
   try {
     connection = await oracledb.getConnection(  {
@@ -39,7 +41,7 @@ async function run() {
       connectString : dbConfig.connectString
     });
 
-    let result = await connection.execute(
+    result = await connection.execute(
       `SELECT *
        FROM MaintenanceSchedule
        WHERE refineryid = 1`  // bind value for :id
@@ -59,6 +61,5 @@ async function run() {
       }
     }
   }
-}
-
-run();
+  return result;
+};
