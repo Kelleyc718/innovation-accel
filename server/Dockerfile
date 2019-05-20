@@ -52,9 +52,13 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-# put a copy of the instant client config for connecting to 
-# the database in the container in the default config location
-COPY /home/ubuntu/app/config/wallet /usr/lib/oracle/19.3/client64/lib/network/admin/
+# Put a copy of the instant client config for connecting to 
+# the database in the container (in the default instant client config location).
+# The source path(first argument) must be a path relative to this dockerfile
+# this can be changed here or overridden by calling docker build with a 
+# build argument e.g. "docker build --build-arg PATH_TO_WALLET='../other/path' ."
+ARG PATH_TO_WALLET='../../../wallet_db1'
+COPY ${PATH_TO_WALLET} /usr/lib/oracle/19.3/client64/lib/network/admin/
 
 # open port 5000 on the container
 EXPOSE 5000
