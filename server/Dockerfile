@@ -57,7 +57,7 @@ COPY . /usr/src/app
 # The source path(first argument) must be a path relative to this dockerfile
 # this can be changed here or overridden by calling docker build with a 
 # build argument e.g. "docker build --build-arg PATH_TO_WALLET='../other/path' ."
-ARG PATH_TO_WALLET='../../../wallet_db1'
+ARG PATH_TO_WALLET='../wallet'
 COPY ${PATH_TO_WALLET} /usr/lib/oracle/19.3/client64/lib/network/admin/
 
 # open port 5000 on the container
