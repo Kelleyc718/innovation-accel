@@ -34,6 +34,10 @@ RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle
 # Uncomment if the tools package is added
 # ENV PATH=$PATH:/usr/lib/oracle/${release}.${update}/client64/bin
 
+# add instant client to path
+ENV PATH=$PATH:/usr/lib/oracle/18.3/client64/bin
+ENV TNS_ADMIN=/usr/lib/oracle/18.3/client64/lib/network/admin
+
 # install node runtime and npm 
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 RUN yum -y install nodejs
