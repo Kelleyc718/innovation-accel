@@ -18,27 +18,34 @@
 #
 FROM oraclelinux:7-slim
 
-RUN mkdir -p /usr/src/app
+# ARG release=19
+# ARG update=3
 
-# Create app directory
-WORKDIR /usr/src/app
+# RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle_instantclient && \
+#     yum -y install oracle-instantclient${release}.${update}-basic oracle-instantclient${release}.${update}-devel oracle-instantclient${release}.${update}-sqlplus && \
+#     rm -rf /var/cache/yum
 
-
-ARG release=19
-ARG update=3
-
-RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle_instantclient && \
-     yum -y install oracle-instantclient${release}.${update}-basic oracle-instantclient${release}.${update}-devel oracle-instantclient${release}.${update}-sqlplus && \
-     rm -rf /var/cache/yum
+RUN  curl -o /etc/yum.repos.d/public-yum-ol7.repo https://yum.oracle.com/public-yum-ol7.repo && \
+     yum-config-manager --enable ol7_oracle_instantclient && \
+     yum -y install oracle-instantclient18.3-basic oracle-instantclient18.3-devel oracle-instantclient18.3-sqlplus && \
+     rm -rf /var/cache/yum && \
+     echo /usr/lib/oracle/18.3/client64/lib > /etc/ld.so.conf.d/oracle-instantclient18.3.conf && \
+     ldconfig
 
 # Uncomment if the tools package is added
 # ENV PATH=$PATH:/usr/lib/oracle/${release}.${update}/client64/bin
 
 # add instant client to path
-ENV PATH=$PATH:/usr/lib/oracle/19.3/client64/bin
-ENV TNS_ADMIN=/usr/lib/oracle/19.3/client64/lib/network/admin
-ENV ORACLE_HOME=/usr/lib/oracle/19.3/client64/lib
-ENV LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib
+ENV PATH=$PATH:/usr/lib/oracle/18.3/client64/bin
+ENV TNS_ADMIN=/usr/lib/oracle/18.3/client64/lib/network/admin
+# ENV ORACLE_HOME=/usr/lib/oracle/19.3/client64/lib
+# ENV LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib
+
+RUN mkdir -p /usr/src/app
+
+# Create app directory
+WORKDIR /usr/src/app
+
 
 # install node runtime and npm 
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
