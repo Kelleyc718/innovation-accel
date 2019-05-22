@@ -1,19 +1,13 @@
 import "../css/Landing.css";
 import React from "react";
 import Navbar from "./Navbar";
-import LandingText from "./LandingHelpers/LandingText";
-import OilRigModel from "./LandingHelpers/OilRigModel";
+import ModelFrame from "./ModelFrame";
 
 const Landing = props => {
   return (
     <React.Fragment>
       <Navbar />
-      <div className="stars" />
-      <div className="twinkling landing-body">
-        <LandingText />
-        <OilRigModel />
-      </div>
-      <div className="filtered" />
+      <ModelFrame modelSource="http://sincere-eggnog.surge.sh/" />
     </React.Fragment>
   );
 };
