@@ -43,7 +43,18 @@ const ids = {
         "base64"
       ),
     MONGO_URI: process.env.MONGO_URI
-  }
+  },
+  adw: {
+    user : process.env.NODE_ORACLEDB_USER || "",
+    
+    password : process.env.NODE_ORACLEDB_PASSWORD || "",
+    
+    connectString : process.env.NODE_ORACLEDB_CONNECTIONSTRING || "",
+    
+    externalAuth : process.env.NODE_ORACLEDB_EXTERNALAUTH ? true : false,
+  },
+  
+  
 };
 
 module.exports = ids;

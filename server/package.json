@@ -37,6 +37,8 @@
     "lru": "^3.1.0",
     "mongoose": "^5.4.5",
     "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
+    "oracledb": "^3.1.2",
     "os": "^0.1.1",
     "passport": "0.4.0",
     "passport-cookie": "^1.0.6",
@@ -46,7 +48,6 @@
     "promise": "8.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "xmlhttprequest": "^1.8.0",
-    "nodemon": "^1.18.9"
+    "xmlhttprequest": "^1.8.0"
   }
 }
