@@ -18,28 +18,12 @@
 #
 FROM oraclelinux:7-slim
 
-# ARG release=19
-# ARG update=3
+ARG release=19
+ARG update=3
 
-# RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle_instantclient && \
-#     yum -y install oracle-instantclient${release}.${update}-basic oracle-instantclient${release}.${update}-devel oracle-instantclient${release}.${update}-sqlplus && \
-#     rm -rf /var/cache/yum
-
-RUN  curl -o /etc/yum.repos.d/public-yum-ol7.repo https://yum.oracle.com/public-yum-ol7.repo && \
-     yum-config-manager --enable ol7_oracle_instantclient && \
-     yum -y install oracle-instantclient18.3-basic oracle-instantclient18.3-devel oracle-instantclient18.3-sqlplus && \
-     rm -rf /var/cache/yum && \
-     echo /usr/lib/oracle/18.3/client64/lib > /etc/ld.so.conf.d/oracle-instantclient18.3.conf && \
-     ldconfig
-
-# Uncomment if the tools package is added
-# ENV PATH=$PATH:/usr/lib/oracle/${release}.${update}/client64/bin
-
-# add instant client to path
-ENV PATH=$PATH:/usr/lib/oracle/18.3/client64/bin
-ENV TNS_ADMIN=/usr/lib/oracle/18.3/client64/lib/network/admin
-# ENV ORACLE_HOME=/usr/lib/oracle/19.3/client64/lib
-# ENV LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib
+RUN  yum -y install oracle-release-el7 && yum-config-manager --enable ol7_oracle_instantclient && \
+     yum -y install oracle-instantclient${release}.${update}-basic oracle-instantclient${release}.${update}-devel oracle-instantclient${release}.${update}-sqlplus && \
+     rm -rf /var/cache/yum
 
 RUN mkdir -p /usr/src/app
 
@@ -71,6 +55,9 @@ COPY . /usr/src/app
 # this can be changed here or overridden by calling docker build with a 
 # build argument e.g. "docker build --build-arg PATH_TO_WALLET='../other/path' ."
 COPY ./wallet/* /usr/lib/oracle/19.3/client64/lib/network/admin/
+
+# Uncomment if the tools package is added
+# ENV PATH=$PATH:/usr/lib/oracle/${release}.${update}/client64/bin
 
 # open port 5000 on the container
 EXPOSE 5000

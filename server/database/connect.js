@@ -8,9 +8,9 @@ async function run() {
 
   try {
     connection = await oracledb.getConnection(  {
-      user : config.user,
-      password : config.password,
-      connectString : config.connectString
+      user : config.adw.user,
+      password : config.adw.password,
+      connectString : config.adw.connectString
     });
 
     result = await connection.execute(
