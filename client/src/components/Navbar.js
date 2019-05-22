@@ -15,11 +15,6 @@ const Navbar = props => {
     }
   });
 
-  // const onLogout = () => {
-  //   localStorage.clear();
-  //   logout();
-  // }
-
   const renderContext = state => {
     const { fixed } = state;
     if (!state.user) {
