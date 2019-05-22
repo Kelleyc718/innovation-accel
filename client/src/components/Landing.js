@@ -7,7 +7,7 @@ const Landing = props => {
   return (
     <React.Fragment>
       <Navbar />
-      <ModelFrame modelSource="http://sincere-eggnog.surge.sh/" />
+      <ModelFrame modelSource="http://vulgar-talk.surge.sh" />
     </React.Fragment>
   );
 };
