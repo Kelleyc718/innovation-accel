@@ -1,14 +1,6 @@
-.login-form {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../img/oil_rig.jpg");
-  height: 100%;
-}
-
 div.ui.center.aligned.middle.grid {
-  height: 100vh;
   margin: 0;
+  width: 100%;
 }
 
 div.column.loginColumn {
