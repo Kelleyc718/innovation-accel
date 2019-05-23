@@ -6,7 +6,7 @@ import Countdown from "./Countdown";
 const LocationInfo = props => {
   return (
     <div className="locationInfoCard">
-      <StatusBar calculation={12} />
+      <StatusBar calculation={1000} />
       <div className="locationName">
         <h1>Galveston Bay</h1>
       </div>
