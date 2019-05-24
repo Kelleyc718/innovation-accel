@@ -24,7 +24,7 @@
 // ********************************
 
 const express = require("express"),
-  router = express.Router(),
+  authRouter = express.Router(),
   config = require("../config/config"),
   passport = require("passport"),
   authentication = require("../helpers/authentication"),
@@ -42,7 +42,7 @@ const requireLogin = passport.authenticate("local", {
  * GET Route for Access Token
  * @returns redirect url associated with IDCS
  */
-router.get("/auth", (req, res, next) => {
+authRouter.get("/auth", (req, res, next) => {
   console.log("I am hitting the url");
   console.log("This is the info we are looking for: ", config.oracle);
   res.redirect("" + config.oracle.tokenURL + "");
@@ -53,7 +53,7 @@ router.get("/auth", (req, res, next) => {
  * @params "/auth", req, req, next
  * @returns local login page served by client application
  */
-router.post("/auth", (req, res, next) => {
+authRouter.post("/auth", (req, res, next) => {
   console.log("this is happening now!");
   console.log("authentications is: ", authentication);
 
@@ -68,7 +68,7 @@ router.post("/auth", (req, res, next) => {
  *  Passes an authorization code obtained from successfully submitting credentials
  *  Exchanges the 'Authorization Code' for an 'ID_Token', 'Access_Token, 'Expiration Time', and 'Type: Bearer'
  */
-router.post(
+authRouter.post(
   "/api/authenticated",
   authentication.sessionToken,
   authentication.getToken,
@@ -77,9 +77,9 @@ router.post(
   }
 );
 
-router.get("/auth-user", passport.authenticate("jwt"), (req, res) => {});
+authRouter.get("/auth-user", passport.authenticate("jwt"), (req, res) => {});
 
-router.get("/logout", (req, res) => {
+authRouter.get("/logout", (req, res) => {
   req.session.destroy();
   res
     .clearCookie("token", "connect.sid")
@@ -88,9 +88,9 @@ router.get("/logout", (req, res) => {
 });
 
 // Route used to allow a user to register
-router.post("/signup", authentication.register);
+authRouter.post("/signup", authentication.register);
 
-router.get("/resetpwd", (req, res, next) => {
+authRouter.get("/resetpwd", (req, res, next) => {
   // take loginCtx from the the POST data and decode it
   console.log("GET for resetpwd received.");
 
@@ -105,9 +105,9 @@ router.get("/resetpwd", (req, res, next) => {
   }
 });
 
-router.get("/test", async (req, res) => {
+authRouter.get("/test", async (req, res) => {
   let result = await db.run();
   res.send(result);
 });
 
-module.exports = router;
+module.exports = authRouter;
