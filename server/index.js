@@ -63,8 +63,6 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const passport = require("passport");
 const config = require("./config/config");
-const authRouter = require("./routes/authRoutes");
-// const provisionRouter = require("./routes/provisionRoutes");
 
 // connecting to our mongodoDB in mLab
 mongoose.connect(
@@ -96,10 +94,9 @@ app.use(
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
-require("./services/passport");
-app.use("/", authRouter);
-app.use("/api", passport.authenticate("jwt"));
-// app.use("/", provisionRouter);
+require("./services/passport"); 
+app.use(require('./routes'))
+
 
 const server = http.createServer(app);
 // Tell server to listen to the defined port
