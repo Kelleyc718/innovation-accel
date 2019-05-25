@@ -9,7 +9,6 @@ const Refineries = props => {
   return (
     <div className="pageLayout">
       <Navbar />
-      <div>Im going to be the legend</div>
       <Link to="/refineries/texas">Vizssss</Link>
       <div className="refineriesCanvas">
         <LocationInfo

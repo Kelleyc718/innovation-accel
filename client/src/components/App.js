@@ -11,6 +11,7 @@ import PrivateRoute from "../helpers/PrivateRoute";
 
 class App extends React.Component {
   render() {
+    console.log("THis is the app component");
     return (
       <AuthProvider>
         <Router>
