@@ -1,27 +1,23 @@
 var oracledb = require('oracledb');
 var config = require('../config/config');
 
-async function run() {
+async function performQuery(query, bindParameters = {}) {
 
   let connection;
   let result;
+  let connectConfig = {
+    user : config.adw.user,
+    password : config.adw.password,
+    connectString : config.adw.connectString
+  };
+  let queryOptions = {
+    outFormat: oracledb.OBJECT
+  };
 
   try {
-    connection = await oracledb.getConnection(  {
-      user : config.adw.user,
-      password : config.adw.password,
-      connectString : config.adw.connectString
-    });
-
-    result = await connection.execute(
-      `SELECT *
-       FROM MaintenanceSchedule
-       WHERE refineryid = 1`  // bind value for :id
-    );
-    var a = result.rows[0][1];
-    console.log(typeof(a));
-    console.log(result.rows[0][1]);
-
+    connection = await oracledb.getConnection(connectConfig);
+    // result = await connection.execute(query, bindParameters);
+    result = await connection.execute(query, bindParameters, queryOptions);
   } catch (err) {
     console.error(err);
   } finally {
@@ -36,4 +32,4 @@ async function run() {
   return result;
 };
 
-module.exports.run = run;
+module.exports = performQuery;
