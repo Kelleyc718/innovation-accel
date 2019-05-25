@@ -1,6 +1,6 @@
-var express = require('express');
+var express = require("express");
 var refineryRouter = express.Router();
-var db = require('../models/refineries');
+var db = require("../models/refineries");
 
 var organizeSchedsByRefinery = schedRowsArray => {
   return schedRowsArray.reduce((accumulator, current) => {
@@ -8,11 +8,11 @@ var organizeSchedsByRefinery = schedRowsArray => {
     let serviceName = current.SERVICENAME;
     let scheduledDttm = current.SCHEDULEDDTTM;
 
-    (refineryId in accumulator) || (accumulator[refineryId]={})    
+    refineryId in accumulator || (accumulator[refineryId] = {});
     accumulator[refineryId][serviceName] = scheduledDttm;
     return accumulator;
-  },{});
-}
+  }, {});
+};
 
 var addSchedsToRefineries = (refineriesArray, schedsArray) => {
   return refineriesArray.map(refinery => {
@@ -20,15 +20,18 @@ var addSchedsToRefineries = (refineriesArray, schedsArray) => {
     refinery.maintenanceDate = schedsArray[refinery.REID].Maintenance;
     return refinery;
   });
-}
+};
 
-refineryRouter.get("/", async (req, res) => {  
+refineryRouter.get("/", async (req, res) => {
   let refineriesResult = await db.getAllRefineries();
   let scheduleResults = await db.getAllSchedStatus();
-  let schedByRefinery = organizeSchedsByRefinery(scheduleResults.rows)
-  let refineriesWithSched = addSchedsToRefineries(refineriesResult.rows, schedByRefinery);
+  let schedByRefinery = organizeSchedsByRefinery(scheduleResults.rows);
+  let refineriesWithSched = addSchedsToRefineries(
+    refineriesResult.rows,
+    schedByRefinery
+  );
   console.log(refineriesWithSched);
-  res.send();
+  res.send(refineriesWithSched);
 });
 
 refineryRouter.get("/:id", async (req, res) => {
