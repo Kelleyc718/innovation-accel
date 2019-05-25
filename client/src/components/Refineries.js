@@ -1,53 +1,59 @@
-import "../css/Refineries.css";
-import React from "react";
-import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
-import LocationInfo from "./RefineriesHelpers/LocationInfo";
+// ***THIS IS THE ONE WE WANT***
+// import "../css/Refineries.css";
+// import React from "react";
+// import Navbar from "./Navbar";
+// import { Link } from "react-router-dom";
+// import LocationInfo from "./RefineriesHelpers/LocationInfo";
+//
+// const API_URL = "http://localhost:5000/refs";
+//
+// class Refineries extends React.Component {
+//   state = {
+//     refineries: []
+//   };
+//
+//   componentDidMount() {
+//     this.fetchUrl();
+//   }
+//
+//   fetchUrl = async () => {
+//     try {
+//       const response = await fetch(API_URL);
+//       const json = await response.json();
+//       this.handleResults(json);
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+//
+//   handleResults = refineries => {
+//     this.setState({
+//       refineries
+//     });
+//   };
+//
+//   handleOnLoad = () => {
+//     this.setState({
+//       isLoading: false
+//     });
+//   };
+//
+//   render() {
+//     return (
+//       <div className="pageLayout">
+//         <Navbar />
+//         <Link to="/refineries/texas">Vizssss</Link>
+//         <div className="refineriesCanvas">
+//           <LocationInfo refineries={this.state.refineries} />
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+//
+// export default Refineries;
 
-const API_URL = "http://localhost:5000/refs";
-
-class Refineries extends React.Component {
-  state = {
-    refineries: []
-  };
-
-  componentDidMount() {
-    this.fetchUrl();
-  }
-
-  fetchUrl = async () => {
-    try {
-      const response = await fetch(API_URL);
-      const json = await response.json();
-      this.handleResults(json);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  handleResults = refineries => {
-    this.setState({
-      refineries
-    });
-  };
-
-  render() {
-    console.log("the refineries are: ", this.state.refineries);
-
-    return (
-      <div className="pageLayout">
-        <Navbar />
-        <Link to="/refineries/texas">Vizssss</Link>
-
-        <div className="refineriesCanvas">
-          <LocationInfo refineries={this.state.refineries} />
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Refineries;
+// **************************
 
 // import "../css/Refineries.css";
 // import React from "react";
@@ -115,3 +121,63 @@ export default Refineries;
 // }
 //
 // export default Refineries;
+
+// *********************
+
+import "../css/Refineries.css";
+import React from "react";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+import LocationInfo from "./RefineriesHelpers/LocationInfo";
+
+const API_URL = "http://localhost:5000/refs";
+
+class Refineries extends React.Component {
+  state = {
+    refineries: []
+  };
+
+  componentDidMount() {
+    this.fetchUrl();
+  }
+
+  fetchUrl = async () => {
+    try {
+      const response = await fetch(API_URL);
+      const json = await response.json();
+      this.handleResults(json);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  handleResults = refineries => {
+    this.setState({
+      refineries
+    });
+  };
+
+  handleOnLoad = () => {
+    this.setState({
+      isLoading: false
+    });
+  };
+
+  render() {
+    return (
+      <div className="refBody">
+        <div className="stars" />
+
+        <div className="twinkling ref-landing-body">
+          <Navbar />
+          <div className="refineriesCanvas">
+            <LocationInfo refineries={this.state.refineries} />
+            <div className="loadingCards">Loading</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Refineries;
