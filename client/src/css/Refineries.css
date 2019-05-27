@@ -48,41 +48,34 @@
 @keyframes fade-out-loading {
   from {
     opacity: 1;
-    display: flex;
   }
   to {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 @-webkit-keyframes fade-out-loading {
   from {
     opacity: 1;
-    display: flex;
   }
   to {
     opacity: 0;
-    display: none;
   }
 }
 @-moz-keyframes fade-out-loading {
   from {
     opacity: 1;
-    display: flex;
   }
   to {
     opacity: 0;
-    display: none;
   }
 }
 @-ms-keyframes fade-out-loading {
   from {
     opacity: 1;
-    display: flex;
   }
   to {
     opacity: 0;
-    display: none;
   }
 }
 
@@ -94,7 +87,8 @@
 }
 
 .ref-landing-body {
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Raleway", sans-serif;
   color: rgba(255, 255, 255, 0.8);
   font-size: 50px;
   display: flex;
@@ -109,7 +103,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 90px;
   background-color: rgba(255, 255, 255, 0.05);
   width: 85vw;
   height: 90vh;

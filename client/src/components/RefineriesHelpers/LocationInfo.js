@@ -8,20 +8,20 @@ const LocationInfo = props => {
     const { REID, NAME, CITY, STATE, serviceDate, maintenanceDate } = refinery;
     return (
       <div key={REID} className="locationInfoCard">
-        <StatusBar calculation={1000} />
+        <StatusBar calculation={100} />
         <div className="locationName">
-          <h1>{NAME}</h1>
-          <h3>
+          <h1 className="locationNameTitle">{NAME}</h1>
+          <h3 className="locationStateTitle">
             {CITY}, {STATE}
           </h3>
         </div>
         <div className="locationBody">D H M S</div>
         <div className="timeStamps">
           <div className="services">
-            Service: <Countdown deadline={serviceDate} />
+            Service: <Countdown deadline="May 31 2019" />
           </div>
           <div className="services">
-            Maintenance: <Countdown deadline={maintenanceDate} />
+            Maintenance: <Countdown deadline="October 31 2019" />
           </div>
         </div>
       </div>
