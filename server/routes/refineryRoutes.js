@@ -30,7 +30,6 @@ refineryRouter.get("/", async (req, res) => {
     refineriesResult.rows,
     schedByRefinery
   );
-  console.log(refineriesWithSched);
   res.send(refineriesWithSched);
 });
 
