@@ -8,6 +8,10 @@
   flex-direction: column;
 } */
 
+body {
+  background-color: black;
+}
+
 @keyframes fade-in-body {
   from {
     opacity: 0;
@@ -80,15 +84,21 @@
 }
 
 .loadingCards {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.02em;
   animation: 3s ease-in-out 0s 1 fade-out-loading;
   justify-content: center;
   align-items: center;
   margin: auto;
 }
 
+.loadingCards {
+  opacity: 0;
+}
+
 .ref-landing-body {
-  /* font-family: "Montserrat", sans-serif; */
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
   color: rgba(255, 255, 255, 0.8);
   font-size: 50px;
   display: flex;

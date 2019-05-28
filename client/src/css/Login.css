@@ -1,3 +1,7 @@
+body {
+  background-color: black;
+}
+
 div.ui.center.aligned.middle.grid {
   margin: 0;
   width: 100%;

@@ -1,92 +1,90 @@
-/* #__oj_zorder_container {
-  height: 0px !important;
+body {
+  background-color: black;
+}
+
+@keyframes fade-in-body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in-body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in-body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in-body {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.refPageLayout {
+  display: flex;
+  flex-direction: column;
+  animation: 3s ease-in-out 0s 1 fade-in-body;
+}
+
+/* @keyframes fade-in-refTextName {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in-refTextName {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in-refTextName {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-ms-keyframes fade-in-refTextName {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 } */
 
-.pageLayout {
-  background-color: black;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* overflow-y: scroll; */
-}
+/* .refNav {
+  position: absolute;
+} */
 
-.topSection {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 550px;
-}
-
-.vizTitle {
-  color: white;
-  font-size: 15px;
-}
-
-.viz1 {
-  display: inline-block;
-  height: 300px;
-  width: 700px;
-  box-sizing: border-box;
-  margin: 10px;
-}
-
-.viz2 {
-  display: inline-block;
-  height: 200px;
-  width: 520px;
-  box-sizing: border-box;
-  margin: 10px;
-}
-
-.vizBtns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.btn-link {
-  margin: 20px !important;
-}
-
-.bottomSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.viz3 {
-  display: inline-block;
-  height: 600px;
-  width: 700px;
-  box-sizing: border-box;
-  margin: 10px;
-}
-
-.viz4 {
-  display: inline-block;
-  height: 600px;
-  width: 700px;
-  box-sizing: border-box;
-  margin: 10px;
-}
-
-.viz5 {
-  display: inline-block;
-  height: 600px;
-  width: 700px;
-  box-sizing: border-box;
-  margin: 10px;
-}
-.viz6 {
-  display: inline-block;
-  height: 600px;
-  width: 700px;
-  box-sizing: border-box;
-  margin: 10px;
-}
+/* .refTitle {
+  animation: 4s ease-in-out 0s 1 fade-in-refTextName;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.96);
+  align-self: center;
+  margin-top: 100px;
+} */
