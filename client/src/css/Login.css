@@ -26,7 +26,11 @@ div.column.loginColumn {
 }
 
 a {
-  color: #48fdff;
+  color: #ffffff;
+}
+
+a:hover {
+  color: #ffffff;
 }
 main {
   flex: 1 0 auto;
