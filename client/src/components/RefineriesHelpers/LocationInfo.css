@@ -49,11 +49,14 @@
 .locationNameTitle {
   font-weight: 500;
   letter-spacing: 0.03em;
+  margin-top: 20px !important;
 }
 
 .locationStateTitle {
   font-weight: 500;
   letter-spacing: 0.04em;
+  margin: 20px !important;
+  padding: 10px;
 }
 
 .locationInfoCard:hover {

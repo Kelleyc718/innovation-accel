@@ -1,10 +1,12 @@
-// import "../css/Visualizations.css";
+import "../css/Visualizations.css";
 import React from "react";
-// import Navbar from "./Navbar";
+import RefNav from "./VisualizationsHelpers/RefNav";
 
 const Visualizations = props => {
+  console.log("the props are: ", props);
   return (
-    <div>
+    <div className="refPageLayout">
+      <RefNav />
       <iframe
         className="modelFrame"
         src={`http://127.0.0.1:4000/?${props.match.params.id}`}
