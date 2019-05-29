@@ -44,6 +44,10 @@
   flex-direction: column;
   box-sizing: border-box;
   justify-content: space-between;
+
+  /* 2 below temp */
+  position: relative;
+  overflow: hidden;
 }
 
 .locationNameTitle {
@@ -61,9 +65,26 @@
 
 .locationInfoCard:hover {
   box-shadow: 2px 2px 10px 1px rgba(255, 255, 255, 0.8);
-  width: 402px;
-  height: 352px;
   cursor: pointer;
+}
+
+.timeStamps {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.bottomRefBody {
+  /* 2 below temp */
+  position: absolute;
+  left: -400px;
+
+  transition: left 1s;
+}
+
+.locationInfoCard:hover .bottomRefBody {
+  transition: 1s;
+  left: 0;
 }
 
 .statusBarGreen {
@@ -106,10 +127,4 @@ ul {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.02em;
-}
-
-.timeStamps {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }

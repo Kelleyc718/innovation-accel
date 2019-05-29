@@ -17,20 +17,22 @@ const LocationInfo = props => {
             }
           }}
         >
-          <StatusBar calculation={100} />
+          <StatusBar calculation={1} />
           <div className="locationName">
             <h1 className="locationNameTitle">{NAME}</h1>
             <h3 className="locationStateTitle">
               {CITY}, {STATE}
             </h3>
           </div>
-          <div className="locationBody">D H M S</div>
-          <div className="timeStamps">
-            <div className="services">
-              Service: <Countdown deadline={serviceDate} />
-            </div>
-            <div className="services">
-              Maintenance: <Countdown deadline={maintenanceDate} />
+          <div className="bottomRefBody">
+            <div className="locationBody">D H M S</div>
+            <div className="timeStamps">
+              <div className="services">
+                Service: <Countdown deadline="may 31, 2019" />
+              </div>
+              <div className="services">
+                Maintenance: <Countdown deadline="June 5, 2019" />
+              </div>
             </div>
           </div>
         </Link>
