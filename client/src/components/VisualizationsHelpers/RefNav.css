@@ -1,10 +1,6 @@
 .navRefLogin {
   position: absolute;
-  background-image: linear-gradient(
-    to top right,
-    rgba(255, 255, 255, 0.007),
-    rgba(255, 255, 255, 0.15)
-  );
+
   height: 85px;
   width: 100%;
   z-index: 2;
@@ -29,11 +25,7 @@
 
 .refNavLogout {
   position: absolute;
-  background-image: linear-gradient(
-    to top right,
-    rgba(255, 255, 255, 0.007),
-    rgba(255, 255, 255, 0.13)
-  );
+
   height: 85px;
   width: 100%;
   z-index: 2;
