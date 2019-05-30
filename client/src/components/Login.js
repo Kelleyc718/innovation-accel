@@ -149,7 +149,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="loginBody">
       <div className="stars" />
       <div className="twinkling landing-body">
         <Grid textAlign="center" verticalAlign="middle">

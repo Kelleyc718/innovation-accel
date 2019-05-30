@@ -38,7 +38,7 @@ const RefNav = props => {
           inverted={!fixed}
           href="/refineries"
           basic
-          color="primary"
+          color="basic"
           className="reflogoutBtn"
         >
           Refineries
@@ -47,7 +47,7 @@ const RefNav = props => {
           inverted={!fixed}
           href="/sensors"
           basic
-          color="violet"
+          color="grey"
           className="reflogoutBtn"
         >
           Sensors
