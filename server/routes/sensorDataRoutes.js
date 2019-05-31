@@ -4,7 +4,7 @@ var db = require("../models/sensors");
 
 sensorRouter.get("/", async (req, res) => {
   let sensorDataResult = await db.getAllSensorData();
-  res.send(sensorDataResults);
+  res.send(sensorDataResult);
 });
 
 module.exports = sensorRouter;
