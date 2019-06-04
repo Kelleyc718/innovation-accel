@@ -33,12 +33,12 @@
 
 .sensorsPageLayout {
   background-color: black;
-  height: 100vh;
+  /* height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 .frameBody {
@@ -60,4 +60,14 @@
 .fadeIn {
   opacity: 1;
   transition: opacity 0.5s 0.5s;
+}
+
+.sensorButtonArea {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
+.singleButton {
+  margin: 20px !important;
 }
