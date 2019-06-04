@@ -28,10 +28,10 @@ const LocationInfo = props => {
             <div className="locationBody">D H M S</div>
             <div className="timeStamps">
               <div className="services">
-                Service: <Countdown deadline="may 31, 2019" />
+                Service: <Countdown deadline={serviceDate} />
               </div>
               <div className="services">
-                Maintenance: <Countdown deadline="June 5, 2019" />
+                Maintenance: <Countdown deadline={maintenanceDate} />
               </div>
             </div>
           </div>
