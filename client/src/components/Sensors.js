@@ -91,7 +91,7 @@ const API_SENSOR_URL = "http://localhost:5000/sensordata";
 
 class Sensors extends React.Component {
   state = {
-    currentFrame: "frame2",
+    currentFrame: "frame1",
     sensorData: []
   };
 
