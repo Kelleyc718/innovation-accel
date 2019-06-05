@@ -55,6 +55,7 @@ COPY . /usr/src/app
 # this can be changed here or overridden by calling docker build with a 
 # build argument e.g. "docker build --build-arg PATH_TO_WALLET='../other/path' ."
 COPY ./wallet/* /usr/lib/oracle/19.3/client64/lib/network/admin/
+COPY ./certs/* /etc/ssl/
 
 # Uncomment if the tools package is added
 # ENV PATH=$PATH:/usr/lib/oracle/${release}.${update}/client64/bin
