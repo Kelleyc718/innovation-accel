@@ -5,6 +5,7 @@ cd ..
 sudo rm -rf /home/ubuntu/app/innovation-accel
 git clone https://github.com/Kelleyc718/innovation-accel.git
 cp config/wallet/* innovation-accel/server/wallet
+mkdir -p innovation-accel/server/certs
 cp config/certs/* innovation-accel/server/certs
 cd innovation-accel
 sudo docker-compose up --build -d
