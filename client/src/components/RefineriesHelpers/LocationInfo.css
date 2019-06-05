@@ -36,46 +36,70 @@
   animation: 1.5s ease-in-out 0s 1 fade-in-card;
   width: 400px;
   height: 350px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px 1px rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.2);
   margin: 50px;
   color: white;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   justify-content: space-between;
+
+  /* 2 below temp */
+  position: relative;
+  overflow: hidden;
 }
 
 .locationNameTitle {
   font-weight: 500;
   letter-spacing: 0.03em;
+  margin-top: 20px !important;
 }
 
 .locationStateTitle {
   font-weight: 500;
   letter-spacing: 0.04em;
+  margin: 20px !important;
+  padding: 10px;
 }
 
 .locationInfoCard:hover {
-  box-shadow: 2px 2px 10px 1px rgba(255, 255, 255, 0.8);
-  width: 402px;
-  height: 352px;
+  box-shadow: 2px 2px 10px 1px rgba(255, 255, 255, 0.4);
   cursor: pointer;
+}
+
+.timeStamps {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.bottomRefBody {
+  /* 2 below temp */
+  position: absolute;
+  left: -400px;
+
+  transition: left 1s;
+}
+
+.locationInfoCard:hover .bottomRefBody {
+  transition: 1s;
+  left: 0;
 }
 
 .statusBarGreen {
   background-color: #7fc482;
-  border-radius: 10px 10px 0 0;
+  border-radius: 2px 2px 0 0;
 }
 
 .statusBarRed {
   background-color: #cf5c36;
-  border-radius: 10px 10px 0 0;
+  border-radius: 2px 2px 0 0;
 }
 
 .statusBarYellow {
   background-color: #f2f79e;
-  border-radius: 10px 10px 0 0;
+  border-radius: 2px 2px 0 0;
 }
 
 .locationName {
@@ -83,12 +107,13 @@
 }
 
 .locationBody {
-  display: flex;
+  display: block;
   justify-content: flex-end;
-  letter-spacing: 0.9em;
+  letter-spacing: 0.85em;
   font-size: 18px;
   font-weight: bold;
-  margin-right: 20px;
+  margin-left: 185px;
+  float: inherit;
 }
 
 ul {
@@ -103,10 +128,4 @@ ul {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.02em;
-}
-
-.timeStamps {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }

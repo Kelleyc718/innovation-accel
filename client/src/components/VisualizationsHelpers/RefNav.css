@@ -1,5 +1,6 @@
-.nav {
+.navRefLogin {
   position: absolute;
+
   height: 85px;
   width: 100%;
   z-index: 2;
@@ -9,12 +10,22 @@
   padding: 1rem;
 }
 
-.loginBtn {
+.refloginBtn {
   margin-right: 50px !important;
 }
 
-.navLogout {
-  /* position: absolute; */
+.reflogoutBtn {
+  margin-right: 20px !important;
+}
+
+.refineryLinkBack {
+  color: white;
+  font-size: 20px;
+}
+
+.refNavLogout {
+  position: absolute;
+
   height: 85px;
   width: 100%;
   z-index: 2;
@@ -22,4 +33,5 @@
   justify-content: flex-end;
   align-items: center;
   padding: 1rem;
+  margin-right: 10px;
 }
