@@ -33,7 +33,7 @@ COPY ./nginxReactRouter.conf /etc/nginx/conf.d/nginxReactRouter.conf
 RUN mkdir /etc/nginx/ssl
 RUN chown -R root:root /etc/nginx/ssl
 RUN chmod -R 600 /etc/nginx/ssl
-COPY ./certs/* /etc/nginx/ssl
+COPY ./certs/* /etc/nginx/ssl/
 
 #change to the app directory
 WORKDIR /usr/src/app
