@@ -22,11 +22,25 @@ COPY . .
 RUN yarn build
 
 ##DEPLOY##
+#define base image to start from
 FROM nginx:1.12-alpine
+
+#remove the default nginx config and replace with the project config
 RUN rm /etc/nginx/conf.d/default.conf
 COPY ./nginxReactRouter.conf /etc/nginx/conf.d/nginxReactRouter.conf
+
+#make a directory for the certs, set permissions, and copy certs to container
+RUN mkdir /etc/nginx/ssl
+RUN chown -R root:root /etc/nginx/ssl
+RUN chmod -R 600 /etc/nginx/ssl
+COPY ./certs/* /etc/nginx/ssl
+
+#change to the app directory
 WORKDIR /usr/src/app
-RUN pwd
+
+#copy the code over
 COPY --from=build /usr/src/app/build/ /usr/share/nginx/html
+
+#expose the port from the container and start nginx
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
