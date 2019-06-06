@@ -40,14 +40,10 @@ class Refineries extends React.Component {
   render() {
     return (
       <div className="refBody">
-        <div className="stars" />
-
-        <div className="twinkling ref-landing-body">
-          <Navbar />
-          <div className="refineriesCanvas">
-            <LocationInfo refineries={this.state.refineries} />
-            <div className="loadingCards">Loading</div>
-          </div>
+        <Navbar />
+        <div className="refineriesCanvas">
+          <LocationInfo refineries={this.state.refineries} />
+          <div className="loadingCards">Loading</div>
         </div>
       </div>
     );
