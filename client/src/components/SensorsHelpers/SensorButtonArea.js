@@ -14,6 +14,15 @@ const SensorButtonArea = props => {
         Boiler
       </Button>
       <Button
+        onClick={props.onGeneratorClick}
+        className="singleButton"
+        basic
+        size="huge"
+        inverted
+      >
+        Generator
+      </Button>
+      <Button
         onClick={props.onPumpClick}
         className="singleButton"
         basic
@@ -23,22 +32,13 @@ const SensorButtonArea = props => {
         Pump
       </Button>
       <Button
-        onClick={props.onGeneratorClick}
+        onClick={props.onFilterClick}
         className="singleButton"
         basic
         size="huge"
         inverted
       >
         Filter
-      </Button>
-      <Button
-        onClick={props.onDesalterClick}
-        className="singleButton"
-        basic
-        size="huge"
-        inverted
-      >
-        Generator
       </Button>
     </React.Fragment>
   );
