@@ -8,7 +8,8 @@ const API_SENSOR_URL = "http://localhost:5000/sensordata";
 class Sensors extends React.Component {
   state = {
     sensorData: [],
-    currentModel: "http://127.0.0.1:9000/allTheTests/"
+    currentModel: "http://127.0.0.1:9000/allTheTests/",
+    left: "-550px"
   };
 
   componentDidMount() {
@@ -36,7 +37,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Pump_ProjectMay/"
+        currentModel: "http://127.0.0.1:9000/Generator_MayProject/ "
       });
     }, 0);
   };
@@ -54,19 +55,22 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Generator_MayProject/"
+        currentModel: "http://127.0.0.1:9000/Pump_ProjectMay/"
       });
     }, 0);
   };
 
-  onDesalterClick = e => {
+  onFilterClick = e => {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Desalter_MayProject/"
+        currentModel: "http://127.0.0.1:9000/Desalter_MayProject/",
+        left: "0px"
       });
     }, 0);
   };
+
+  setSensorInfoTransition = () => {};
 
   render() {
     console.log("the state is: ", this.state.sensorData);
@@ -78,8 +82,14 @@ class Sensors extends React.Component {
             onBoilerClick={this.onBoilerClick}
             onPumpClick={this.onPumpClick}
             onGeneratorClick={this.onGeneratorClick}
-            onDesalterClick={this.onDesalterClick}
+            onFilterClick={this.onFilterClick}
           />
+        </div>
+        <div style={{ left: this.state.left }} className="sensorCardInfo">
+          <p className="sensorValueType">PSI</p>
+          <p className="sensorValueType">RPM</p>
+          <p className="sensorValueType">Vibration</p>
+          <p className="sensorValueType">Throughput</p>
         </div>
         <iframe
           className="sensorModelFrame"
