@@ -41,7 +41,6 @@
 }
 
 .sensorModelFrame {
-  /* animation: 3s ease-in-out 0s 1 fade-in-body; */
   width: 100vw;
   height: 100vh;
   border: none;
@@ -59,7 +58,7 @@
   margin: 20px !important;
 }
 
-.sensorCardInfo {
+.sensorCardInfoFilter {
   flex-wrap: wrap;
   position: absolute;
   font-size: 30px;
@@ -68,15 +67,70 @@
   margin-top: 500px;
   width: 500px;
   height: 400px;
-  border: 1px solid purple;
-  transition: left 1s;
+  transition: left 2.5s;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.sensorCardInfo:active {
-  transition: 1s;
+.sensorCardInfoFilter:active {
+  transition: 2.5s;
+  left: 0;
+}
+
+.sensorCardInfoPump {
+  flex-wrap: wrap;
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  margin-left: 25px;
+  margin-top: 500px;
+  width: 500px;
+  height: 400px;
+  transition: left 2.5s;
+  background-color: rgba(17, 25, 25, 0.8);
+}
+
+.sensorCardInfoPump:active {
+  transition: 2.5s;
+  left: 0;
+}
+
+.sensorCardInfoGenerator {
+  flex-wrap: wrap;
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  margin-left: 25px;
+  margin-top: 500px;
+  width: 500px;
+  height: 400px;
+  transition: left 2.5s;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sensorCardInfoGenerator:active {
+  transition: 2.5s;
+  left: 0;
+}
+
+.sensorCardInfoBoiler {
+  flex-wrap: wrap;
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  margin-left: 25px;
+  margin-top: 500px;
+  width: 500px;
+  height: 400px;
+  transition: left 2.5s;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sensorCardInfoBoiler:active {
+  transition: 2.5s;
   left: 0;
 }
 
 .sensorValueType {
+  font-family: "Montserrat", sans-serif;
   margin: 10px;
 }
