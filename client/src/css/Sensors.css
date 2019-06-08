@@ -58,3 +58,25 @@
 .singleButton {
   margin: 20px !important;
 }
+
+.sensorCardInfo {
+  flex-wrap: wrap;
+  position: absolute;
+  font-size: 30px;
+  color: white;
+  margin-left: 25px;
+  margin-top: 500px;
+  width: 500px;
+  height: 400px;
+  border: 1px solid purple;
+  transition: left 1s;
+}
+
+.sensorCardInfo:active {
+  transition: 1s;
+  left: 0;
+}
+
+.sensorValueType {
+  margin: 10px;
+}
