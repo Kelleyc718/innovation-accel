@@ -10,18 +10,22 @@ import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 const API_SENSOR_URL = "http://localhost:5000/sensordata";
 
 class Sensors extends React.Component {
-  state = {
-    sensorData: [],
-    currentModel: "http://127.0.0.1:9000/allTheTests/",
-    leftFilter: "-550px",
-    leftPump: "-550px",
-    leftGenerator: "-550px",
-    leftBoiler: "-550px",
-    filterSensorData: "",
-    pumpSensorData: "",
-    generatorSensorData: "",
-    boilerSensorData: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sensorData: [],
+      currentModel: "http://127.0.0.1:9000/allTheTests/",
+      leftFilter: "-550px",
+      leftPump: "-550px",
+      leftGenerator: "-550px",
+      leftBoiler: "-550px",
+      filterSensorData: "",
+      pumpSensorData: "",
+      generatorSensorData: "",
+      boilerSensorData: ""
+    };
+  }
 
   componentDidMount() {
     this.fetchUrl();
@@ -101,7 +105,6 @@ class Sensors extends React.Component {
   };
 
   render() {
-    console.log("the state is from the frontend: ", this.state.sensorData);
     return (
       <div className="sensorsPageLayout">
         <SensorNav />
