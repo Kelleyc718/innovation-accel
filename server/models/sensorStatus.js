@@ -2,7 +2,7 @@ var dbConnection = require('../database/connect')
 
 module.exports.getSensorStatus = async () => {
   console.log('get sensor status called');
-  let statusResponse = await dbConnection(
+  let statusResponse = await dbConnection.performQuery(
     'SELECT * FROM(\
       SELECT * FROM livesensorstatus ORDER BY DATE_OF_ENTRY DESC\
     ) \
