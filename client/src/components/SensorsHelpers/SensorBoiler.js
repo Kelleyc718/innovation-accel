@@ -5,10 +5,29 @@ const SensorBoiler = ({ boilerSensorData }) => {
   console.log("the props in the SensorBoiler are: ", boilerSensorData);
   return (
     <React.Fragment>
-      <p className="sensorValueType">Humidity</p>
-      <p className="sensorValueType">Throughput</p>
-      <p className="sensorValueType">Temperator</p>
-      <p className="sensorValueType">Room Temperator</p>
+      <div className="topCard">
+        <div className="sensVals">
+          <p className="sensorValueType">PSI</p>
+          <p className="sensorValueNumber">{boilerSensorData.PSI}</p>
+        </div>
+
+        <div className="sensVals">
+          <p className="sensorValueType">Humidity</p>
+          <p className="sensorValueNumber">{boilerSensorData.HUMIDITY}</p>
+        </div>
+      </div>
+
+      <div className="bottomCard">
+        <div className="sensVals">
+          <p className="sensorValueType">Temperature</p>
+          <p className="sensorValueNumber">{boilerSensorData.TEMPRATURE}</p>
+        </div>
+
+        <div className="sensVals">
+          <p className="sensorValueType">Room Temperature</p>
+          <p className="sensorValueNumber">{boilerSensorData.ROOMTEMPRATURE}</p>
+        </div>
+      </div>
     </React.Fragment>
   );
 };

@@ -58,7 +58,7 @@
   margin: 20px !important;
 }
 
-.sensorCardInfoFilter {
+.sensorCard {
   flex-wrap: wrap;
   position: absolute;
   font-size: 30px;
@@ -67,70 +67,35 @@
   margin-top: 500px;
   width: 500px;
   height: 400px;
-  transition: left 2.5s;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.sensorCardInfoFilter:active {
-  transition: 2.5s;
-  left: 0;
-}
-
-.sensorCardInfoPump {
-  flex-wrap: wrap;
-  position: absolute;
-  font-size: 30px;
-  color: white;
-  margin-left: 25px;
-  margin-top: 500px;
-  width: 500px;
-  height: 400px;
-  transition: left 2.5s;
-  background-color: rgba(17, 25, 25, 0.8);
-}
-
-.sensorCardInfoPump:active {
-  transition: 2.5s;
-  left: 0;
-}
-
-.sensorCardInfoGenerator {
-  flex-wrap: wrap;
-  position: absolute;
-  font-size: 30px;
-  color: white;
-  margin-left: 25px;
-  margin-top: 500px;
-  width: 500px;
-  height: 400px;
-  transition: left 2.5s;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.sensorCardInfoGenerator:active {
-  transition: 2.5s;
-  left: 0;
-}
-
-.sensorCardInfoBoiler {
-  flex-wrap: wrap;
-  position: absolute;
-  font-size: 30px;
-  color: white;
-  margin-left: 25px;
-  margin-top: 500px;
-  width: 500px;
-  height: 400px;
-  transition: left 2.5s;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.sensorCardInfoBoiler:active {
-  transition: 2.5s;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 4s ease-in-out, left 2.5s;
+  -moz-transition: opacity 4s ease-in-out, left 2.5s;
+  -webkit-transition: opacity 4s ease-in-out, left 2.5s;
 }
 
 .sensorValueType {
   font-family: "Montserrat", sans-serif;
   margin: 10px;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.sensVals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 10px;
+  width: 175px;
+  height: 175px;
+}
+
+.topCard {
+  display: flex;
+}
+
+.bottomCard {
+  display: flex;
 }
