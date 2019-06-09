@@ -4,7 +4,7 @@ import SensorNav from "./SensorsHelpers/SensorNav";
 import SensorButtonArea from "./SensorsHelpers/SensorButtonArea";
 import SensorFilter from "./SensorsHelpers/SensorFilter";
 import SensorPump from "./SensorsHelpers/SensorPump";
-import SensorGenerator from "./SensorsHelpers/SensorGenerator";
+import SensorDesalter from "./SensorsHelpers/SensorDesalter";
 import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 
 const API_SENSOR_URL = "http://localhost:5000/sensordata";
@@ -14,16 +14,20 @@ class Sensors extends React.Component {
     super(props);
 
     this.state = {
-      sensorData: [],
+      sensorData: {},
       currentModel: "http://127.0.0.1:9000/allTheTests/",
       leftFilter: "-550px",
+      filOp: "0",
+      pumpOp: "0",
+      desOp: "0",
+      boilOp: "0",
       leftPump: "-550px",
-      leftGenerator: "-550px",
+      leftDesalter: "-550px",
       leftBoiler: "-550px",
-      filterSensorData: "",
-      pumpSensorData: "",
-      generatorSensorData: "",
-      boilerSensorData: ""
+      filterSensorData: {},
+      pumpSensorData: {},
+      boilerSensorData: {},
+      desalterSensorData: {}
     };
   }
 
@@ -35,20 +39,20 @@ class Sensors extends React.Component {
     try {
       const response = await fetch(API_SENSOR_URL);
       const json = await response.json();
-      const data = json.rows;
-      this.handleResults(data);
+      this.handleResults(json);
     } catch (err) {
       console.log(err);
     }
   };
 
   handleResults = sensorData => {
+    console.log("The sensor data call is: ", sensorData);
     this.setState({
       sensorData,
-      boilerSensorData: sensorData[0],
-      pumpSensorData: sensorData[1],
-      filterSensorData: sensorData[4],
-      generatorSensorData: sensorData[5]
+      filterSensorData: sensorData.filter,
+      pumpSensorData: sensorData.pump,
+      desalterSensorData: sensorData.desalter,
+      boilerSensorData: sensorData.boiler
     });
   };
 
@@ -58,9 +62,13 @@ class Sensors extends React.Component {
       this.setState({
         currentModel: "http://127.0.0.1:9000/Generator_MayProject/",
         leftFilter: "-550px",
-        leftGenerator: "-550px",
+        leftDesalter: "-550px",
         leftBoiler: "-550px",
-        leftPump: "0px"
+        leftPump: "0px",
+        pumpOp: 1,
+        filOp: "0",
+        desOp: "0",
+        boilOp: "0"
       });
     }, 0);
   };
@@ -71,22 +79,30 @@ class Sensors extends React.Component {
       this.setState({
         currentModel: "http://127.0.0.1:9000/Boiler_ProjectMay/",
         leftFilter: "-550px",
-        leftGenerator: "-550px",
+        leftDesalter: "-550px",
         leftPump: "-550px",
-        leftBoiler: "0px"
+        leftBoiler: "0px",
+        boilOp: 1,
+        pumpOp: "0",
+        filOp: "0",
+        desOp: "0"
       });
     }, 0);
   };
 
-  onGeneratorClick = e => {
+  onDesalterClick = e => {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
         currentModel: "http://127.0.0.1:9000/Pump_ProjectMay/",
         leftFilter: "-550px",
-        leftGenerator: "0px",
+        leftDesalter: "0px",
         leftPump: "-550px",
-        leftBoiler: "-550px"
+        leftBoiler: "-550px",
+        desOp: 1,
+        pumpOp: "0",
+        filOp: "0",
+        boilOp: "0"
       });
     }, 0);
   };
@@ -98,8 +114,12 @@ class Sensors extends React.Component {
         currentModel: "http://127.0.0.1:9000/Desalter_MayProject/",
         leftFilter: "0px",
         leftPump: "-550px",
-        leftGenerator: "-550px",
-        leftBoiler: "-550px"
+        leftDesalter: "-550px",
+        leftBoiler: "-550px",
+        filOp: 1,
+        pumpOp: "0",
+        desOp: "0",
+        boilOp: "0"
       });
     }, 250);
   };
@@ -112,37 +132,35 @@ class Sensors extends React.Component {
           <SensorButtonArea
             onBoilerClick={this.onBoilerClick}
             onPumpClick={this.onPumpClick}
-            onGeneratorClick={this.onGeneratorClick}
+            onDesalterClick={this.onDesalterClick}
             onFilterClick={this.onFilterClick}
           />
         </div>
 
         <div
-          style={{ left: this.state.leftFilter }}
-          className="sensorCardInfoFilter"
+          style={{ left: this.state.leftFilter, opacity: this.state.filOp }}
+          className="sensorCard"
         >
           <SensorFilter filterSensorData={this.state.filterSensorData} />
         </div>
 
         <div
-          style={{ left: this.state.leftPump }}
-          className="sensorCardInfoPump"
+          style={{ left: this.state.leftPump, opacity: this.state.pumpOp }}
+          className="sensorCard"
         >
           <SensorPump pumpSensorData={this.state.pumpSensorData} />
         </div>
 
         <div
-          style={{ left: this.state.leftGenerator }}
-          className="sensorCardInfoGenerator"
+          style={{ left: this.state.leftDesalter, opacity: this.state.desOp }}
+          className="sensorCard"
         >
-          <SensorGenerator
-            generatorSensorData={this.state.generatorSensorData}
-          />
+          <SensorDesalter desalterSensorData={this.state.desalterSensorData} />
         </div>
 
         <div
-          style={{ left: this.state.leftBoiler }}
-          className="sensorCardInfoBoiler"
+          style={{ left: this.state.leftBoiler, opacity: this.state.boilOp }}
+          className="sensorCard"
         >
           <SensorBoiler boilerSensorData={this.state.boilerSensorData} />
         </div>

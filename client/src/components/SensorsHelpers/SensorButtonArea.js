@@ -14,13 +14,13 @@ const SensorButtonArea = props => {
         Boiler
       </Button>
       <Button
-        onClick={props.onGeneratorClick}
+        onClick={props.onDesalterClick}
         className="singleButton"
         basic
         size="huge"
         inverted
       >
-        Generator
+        Desalter
       </Button>
       <Button
         onClick={props.onPumpClick}
