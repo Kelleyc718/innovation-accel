@@ -65,7 +65,7 @@ const passport = require("passport");
 const config = require("./config/config");
 
 // connecting to our mongodoDB in mLab
-mongoose.connect(
+mongoose.createConnection(
   config.server.MONGO_URI,
   //this removes the error we will get from mongoose (error on mongoose end -> wait for mongoose to update)
   { useNewUrlParser: true }
