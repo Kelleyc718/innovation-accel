@@ -65,7 +65,7 @@ const passport = require("passport");
 const config = require("./config/config");
 
 // connecting to our mongodoDB in mLab
-mongoose.createConnection(
+mongoose.connect(
   config.server.MONGO_URI,
   //this removes the error we will get from mongoose (error on mongoose end -> wait for mongoose to update)
   { useNewUrlParser: true }
@@ -94,9 +94,8 @@ app.use(
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
-require("./services/passport"); 
-app.use(require('./routes'))
-
+require("./services/passport");
+app.use(require("./routes"));
 
 const server = http.createServer(app);
 // Tell server to listen to the defined port
