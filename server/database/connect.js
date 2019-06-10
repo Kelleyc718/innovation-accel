@@ -32,4 +32,4 @@ async function performQuery(query, bindParameters = {}) {
   return result;
 };
 
-module.exports = performQuery;
+module.exports.performQuery = performQuery;

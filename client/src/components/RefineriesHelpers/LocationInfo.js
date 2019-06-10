@@ -24,14 +24,22 @@ const LocationInfo = props => {
               {CITY}, {STATE}
             </h3>
           </div>
+
           <div className="bottomRefBody">
-            <div className="locationBody">D H M S</div>
-            <div className="timeStamps">
-              <div className="services">
-                Service: <Countdown deadline={serviceDate} />
+            <div className="leftSide">
+              <div className="locationBody">D H M S</div>
+              <div className="timeStamps">
+                <div className="services">
+                  Service: <Countdown deadline={serviceDate} />
+                </div>
+                <div className="services">
+                  Maintenance: <Countdown deadline={maintenanceDate} />
+                </div>
               </div>
-              <div className="services">
-                Maintenance: <Countdown deadline={maintenanceDate} />
+            </div>
+            <div className="rightSide">
+              <div classname="rightContents">
+                <p>Not Final THing HEre</p>
               </div>
             </div>
           </div>
