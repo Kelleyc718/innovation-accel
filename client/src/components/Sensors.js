@@ -121,7 +121,7 @@ class Sensors extends React.Component {
         desOp: "0",
         boilOp: "0"
       });
-    }, 250);
+    }, 50);
   };
 
   render() {

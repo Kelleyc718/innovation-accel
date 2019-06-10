@@ -45,7 +45,6 @@
   box-sizing: border-box;
   justify-content: space-between;
 
-  /* 2 below temp */
   position: relative;
   overflow: hidden;
 }
@@ -80,17 +79,30 @@
   flex-direction: column;
 }
 
-.bottomRefBody {
-  /* 2 below temp */
+.leftSide {
   position: absolute;
   left: -400px;
-
   transition: left 1s;
 }
 
-.locationInfoCard:hover .bottomRefBody {
+.locationInfoCard:hover .leftSide {
   transition: 1s;
   left: 0;
+}
+
+.rightSide {
+  position: absolute;
+  right: 0px;
+  transition: right 1s;
+
+  /* temp style */
+  margin-right: 112px;
+  margin-top: 50px;
+}
+
+.locationInfoCard:hover .rightSide {
+  transition: 1s;
+  right: -400px;
 }
 
 .statusBarGreen {
