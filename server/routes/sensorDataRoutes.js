@@ -3,6 +3,7 @@ var sensorRouter = express.Router();
 var dbSensor = require("../models/sensors");
 var dbForecast = require("../models/forecasts");
 var dbSensorStatus = require("../models/sensorStatus");
+var dbrulstatus = require("../models/rulStatus");
 
 sensorRouter.get("/", async (req, res) => {
   let sensorDataResult = await dbSensor.getAllSensorData();
@@ -18,5 +19,11 @@ sensorRouter.get("/status", async (req, res) => {
   let sensorStatus = await dbSensorStatus.getSensorStatus();
   res.send(sensorStatus); 
 });
+
+sensorRouter.get("/rul", async (req, res) => {
+  let sensorStatus = await dbSensorStatus.getrulstatus();
+  res.send(sensorStatus); 
+});
+
 
 module.exports = sensorRouter;
