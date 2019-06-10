@@ -165,6 +165,7 @@ class Sensors extends React.Component {
           <SensorBoiler boilerSensorData={this.state.boilerSensorData} />
         </div>
 
+        <div className="loadRefModel">Creating Refinery...</div>
         <iframe
           className="sensorModelFrame"
           src={this.state.currentModel}

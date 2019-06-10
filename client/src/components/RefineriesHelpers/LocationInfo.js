@@ -39,7 +39,7 @@ const LocationInfo = props => {
             </div>
             <div className="rightSide">
               <div classname="rightContents">
-                <p>Not Final THing HEre</p>
+                <p>Not Final Thing Here</p>
               </div>
             </div>
           </div>
