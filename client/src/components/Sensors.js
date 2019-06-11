@@ -41,11 +41,13 @@ class Sensors extends React.Component {
     this.fetchRul();
   }
 
-  fetchUrl = async () => {
+  fetchUrl = () => {
     try {
-      const response = await fetch(API_SENSOR_URL);
-      const json = await response.json();
-      this.handleResults(json);
+      setInterval(async () => {
+        const response = await fetch(API_SENSOR_URL);
+        const json = await response.json();
+        this.handleResults(json);
+      }, 1000);
     } catch (err) {
       console.log(err);
     }
@@ -85,7 +87,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Generator_MayProject/",
+        currentModel: "http://127.0.0.1:9000/Filter_MayProject/",
         leftFilter: "-550px",
         leftDesalter: "-550px",
         leftBoiler: "-550px",

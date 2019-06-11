@@ -19,8 +19,8 @@ const SensorPump = ({ pumpSensorData, rul }) => {
 
       <div className="bottomCard">
         <div className="sensVals">
-          <p className="sensorValueType">Humidity</p>
-          <p className="sensorValueNumber">{pumpSensorData.HUMIDITY}</p>
+          <p className="sensorValueType">Throughout</p>
+          <p className="sensorValueNumber">{pumpSensorData.THROUGHPUTPCT}</p>
         </div>
 
         <div className="sensVals">
