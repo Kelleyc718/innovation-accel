@@ -25,4 +25,9 @@ sensorRouter.get("/rul", async (req, res) => {
   res.send(sensorStatus);
 });
 
+sensorRouter.get("/sensorbutton", async (req, res) => {
+  let sensorStatus = await dbbuttoncolor.getsensorbutton();
+  res.send(sensorStatus);
+});
+
 module.exports = sensorRouter;

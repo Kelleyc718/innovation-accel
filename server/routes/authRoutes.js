@@ -1,28 +1,3 @@
-// const express = require("express"),
-//   // router = express.Router(),
-//   // config = require("../config/config"),
-//   mongoose = require("mongoose");
-// // passport = require("passport");
-// // authentication = require("../helpers/authentication");
-//
-// const User = mongoose.model("dbUsers");
-//
-// // **********************
-// // *** Test route ***
-// module.exports = app => {
-//   app.get("/api", (req, res) => {
-//     res.send({ Sup: "Homie!!!" });
-//     new User({ userName: "sammi" }).save();
-//   });
-// };
-
-// ********************************
-// Took this from Chris K project from manta
-// the require statements above are also from chris
-// ***we can change the router.get to app.get if we do -> module.exports = (app) => {} (as seen in test route)
-//and we have the function in our index.js file -> require("./routes/authRoutes")(app);
-// ********************************
-
 const express = require("express"),
   authRouter = express.Router(),
   config = require("../config/config"),

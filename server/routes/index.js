@@ -10,8 +10,8 @@ router.use("/", authRouter);
 router.use("/refs", refineryRouter);
 router.use("/scheduled", scheduledRouter);
 router.use("/sensordata", sensorData);
-router.use("/sensordata", sensorData);
 router.use("/rul", sensorData);
+router.use("/sensorbutton", sensorData);
 router.use("/api", passport.authenticate("jwt"));
 
 module.exports = router;
