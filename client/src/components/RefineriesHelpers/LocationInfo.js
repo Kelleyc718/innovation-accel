@@ -17,7 +17,7 @@ const LocationInfo = props => {
             }
           }}
         >
-          <StatusBar calculation={1} />
+          <StatusBar calculation={60} />
           <div className="locationName">
             <h1 className="locationNameTitle">{NAME}</h1>
             <h3 className="locationStateTitle">

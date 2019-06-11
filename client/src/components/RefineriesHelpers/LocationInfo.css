@@ -106,17 +106,17 @@
 }
 
 .statusBarGreen {
-  background-color: #7fc482;
+  background-color: #2eb130;
   border-radius: 2px 2px 0 0;
 }
 
 .statusBarRed {
-  background-color: #cf5c36;
+  background-color: #e00f0f;
   border-radius: 2px 2px 0 0;
 }
 
 .statusBarYellow {
-  background-color: #f2f79e;
+  background-color: #cab117;
   border-radius: 2px 2px 0 0;
 }
 

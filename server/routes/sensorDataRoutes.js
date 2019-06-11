@@ -17,13 +17,12 @@ sensorRouter.get("/forecasts", async (req, res) => {
 
 sensorRouter.get("/status", async (req, res) => {
   let sensorStatus = await dbSensorStatus.getSensorStatus();
-  res.send(sensorStatus); 
+  res.send(sensorStatus);
 });
 
 sensorRouter.get("/rul", async (req, res) => {
-  let sensorStatus = await dbSensorStatus.getrulstatus();
-  res.send(sensorStatus); 
+  let sensorStatus = await dbrulstatus.getrulstatus();
+  res.send(sensorStatus);
 });
-
 
 module.exports = sensorRouter;
