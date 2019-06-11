@@ -8,6 +8,7 @@ import SensorDesalter from "./SensorsHelpers/SensorDesalter";
 import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 
 const API_SENSOR_URL = "http://localhost:5000/sensordata";
+const RUL_SENSOR_URL = "http://localhost:5000/sensordata/rul";
 
 class Sensors extends React.Component {
   constructor(props) {
@@ -27,12 +28,17 @@ class Sensors extends React.Component {
       filterSensorData: {},
       pumpSensorData: {},
       boilerSensorData: {},
-      desalterSensorData: {}
+      desalterSensorData: {},
+      boilerRul: "",
+      pumpRul: "",
+      desalterRul: "",
+      filterRul: ""
     };
   }
 
   componentDidMount() {
     this.fetchUrl();
+    this.fetchRul();
   }
 
   fetchUrl = async () => {
@@ -46,13 +52,32 @@ class Sensors extends React.Component {
   };
 
   handleResults = sensorData => {
-    console.log("The sensor data call is: ", sensorData);
     this.setState({
       sensorData,
       filterSensorData: sensorData.filter,
       pumpSensorData: sensorData.pump,
       desalterSensorData: sensorData.desalter,
       boilerSensorData: sensorData.boiler
+    });
+  };
+
+  fetchRul = async () => {
+    try {
+      const response = await fetch(RUL_SENSOR_URL);
+      const json = await response.json();
+      const rul = json.rows;
+      this.handleRulResults(rul);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  handleRulResults = rul => {
+    this.setState({
+      boilerRul: rul[0].RUL,
+      pumpRul: rul[1].RUL,
+      desalterRul: rul[2].RUL,
+      filterRul: rul[4].RUL
     });
   };
 
@@ -125,6 +150,7 @@ class Sensors extends React.Component {
   };
 
   render() {
+    console.log("the RUL for boiler is: ", this.state.boilerRul);
     return (
       <div className="sensorsPageLayout">
         <SensorNav />
@@ -141,28 +167,40 @@ class Sensors extends React.Component {
           style={{ left: this.state.leftFilter, opacity: this.state.filOp }}
           className="sensorCard"
         >
-          <SensorFilter filterSensorData={this.state.filterSensorData} />
+          <SensorFilter
+            rul={this.state.filterRul}
+            filterSensorData={this.state.filterSensorData}
+          />
         </div>
 
         <div
           style={{ left: this.state.leftPump, opacity: this.state.pumpOp }}
           className="sensorCard"
         >
-          <SensorPump pumpSensorData={this.state.pumpSensorData} />
+          <SensorPump
+            rul={this.state.pumpRul}
+            pumpSensorData={this.state.pumpSensorData}
+          />
         </div>
 
         <div
           style={{ left: this.state.leftDesalter, opacity: this.state.desOp }}
           className="sensorCard"
         >
-          <SensorDesalter desalterSensorData={this.state.desalterSensorData} />
+          <SensorDesalter
+            rul={this.state.desalterRul}
+            desalterSensorData={this.state.desalterSensorData}
+          />
         </div>
 
         <div
           style={{ left: this.state.leftBoiler, opacity: this.state.boilOp }}
           className="sensorCard"
         >
-          <SensorBoiler boilerSensorData={this.state.boilerSensorData} />
+          <SensorBoiler
+            rul={this.state.boilerRul}
+            boilerSensorData={this.state.boilerSensorData}
+          />
         </div>
 
         <div className="loadRefModel">Creating Refinery...</div>

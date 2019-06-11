@@ -4,6 +4,7 @@ var dbSensor = require("../models/sensors");
 var dbForecast = require("../models/forecasts");
 var dbSensorStatus = require("../models/sensorStatus");
 var dbrulstatus = require("../models/rulStatus");
+var dbbuttoncolor = require("../models/sensorButton");
 
 sensorRouter.get("/", async (req, res) => {
   let sensorDataResult = await dbSensor.getAllSensorData();

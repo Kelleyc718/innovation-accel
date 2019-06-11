@@ -1,7 +1,7 @@
 import "../../css/Sensors.css";
 import React from "react";
 
-const SensorDesalter = ({ desalterSensorData }) => {
+const SensorDesalter = ({ desalterSensorData, rul }) => {
   console.log("the props in the SensorDesalter are: ", desalterSensorData);
   return (
     <React.Fragment>
@@ -28,6 +28,13 @@ const SensorDesalter = ({ desalterSensorData }) => {
           <p className="sensorValueNumber">
             {desalterSensorData.VIBRATIONKCPM}
           </p>
+        </div>
+      </div>
+
+      <div className="sensRul">
+        <div className="rulStyle">
+          <p className="sensorValueType">Remaining Useful Life (Days):</p>
+          <p className="sensorValueNumber">{rul}</p>
         </div>
       </div>
     </React.Fragment>

@@ -1,7 +1,7 @@
 import "../../css/Sensors.css";
 import React from "react";
 
-const SensorBoiler = ({ boilerSensorData }) => {
+const SensorBoiler = ({ boilerSensorData, rul }) => {
   console.log("the props in the SensorBoiler are: ", boilerSensorData);
   return (
     <React.Fragment>
@@ -26,6 +26,12 @@ const SensorBoiler = ({ boilerSensorData }) => {
         <div className="sensVals">
           <p className="sensorValueType">Room Temperature</p>
           <p className="sensorValueNumber">{boilerSensorData.ROOMTEMPRATURE}</p>
+        </div>
+      </div>
+      <div className="sensRul">
+        <div className="rulStyle">
+          <p className="sensorValueType">Remaining Useful Life (Days):</p>
+          <p className="sensorValueNumber">{rul}</p>
         </div>
       </div>
     </React.Fragment>

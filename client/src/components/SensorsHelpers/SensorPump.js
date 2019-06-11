@@ -1,7 +1,7 @@
 import "../../css/Sensors.css";
 import React from "react";
 
-const SensorPump = ({ pumpSensorData }) => {
+const SensorPump = ({ pumpSensorData, rul }) => {
   console.log("the props in the SensorPump are: ", pumpSensorData);
   return (
     <React.Fragment>
@@ -26,6 +26,13 @@ const SensorPump = ({ pumpSensorData }) => {
         <div className="sensVals">
           <p className="sensorValueType">Vibration (CPM)</p>
           <p className="sensorValueNumber">{pumpSensorData.VIBRATIONKCPM}</p>
+        </div>
+      </div>
+
+      <div className="sensRul">
+        <div className="rulStyle">
+          <p className="sensorValueType">Remaining Useful Life (Days):</p>
+          <p className="sensorValueNumber">{rul}</p>
         </div>
       </div>
     </React.Fragment>
