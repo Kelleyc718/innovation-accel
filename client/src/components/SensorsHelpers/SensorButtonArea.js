@@ -5,14 +5,14 @@ const WARNING_API_URL = "http://localhost:5000/sensordata/sensorbutton";
 
 class SensorButtonArea extends React.Component {
   state = {
-    boilerWarning: "",
-    desalterWarning: "",
-    pumpWarning: "",
-    filterWarning: "",
-    boilerBasic: "basic",
-    desalterBasic: "basic",
-    pumpBasic: "basic",
-    filterBasic: "basic"
+    boilerWarning: "green",
+    desalterWarning: "green",
+    pumpWarning: "green",
+    filterWarning: "green"
+    // boilerBasic: "basic",
+    // desalterBasic: "basic",
+    // pumpBasic: "basic",
+    // filterBasic: "basic"
   };
 
   componentDidMount() {
@@ -34,26 +34,26 @@ class SensorButtonArea extends React.Component {
   handleResults = rows => {
     if (rows[0].COUT >= 300) {
       this.setState({
-        pumpWarning: "yellow",
-        pumpBasic: false
+        pumpWarning: "yellow"
+        // pumpBasic: false
       });
     }
     if (rows[1].COUT >= 300) {
       this.setState({
-        boilerWarning: "yellow",
-        boilerBasic: false
+        boilerWarning: "yellow"
+        // boilerBasic: false
       });
     }
     if (rows[2].COUT >= 300) {
       this.setState({
-        desalterWarning: "yellow",
-        desalterBasic: false
+        desalterWarning: "yellow"
+        // desalterBasic: false
       });
     }
     if (rows[5].COUT >= 300) {
       this.setState({
-        filterWarning: "yellow",
-        filterBasic: false
+        filterWarning: "yellow"
+        // filterBasic: false
       });
     }
   };

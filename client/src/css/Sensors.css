@@ -56,6 +56,8 @@
 
 .singleButton {
   margin: 20px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .sensorCard {
@@ -153,7 +155,7 @@
 
 .loadRefModel {
   font-family: "Montserrat", sans-serif;
-  animation: 6s ease-in-out 0s 1 fade-out-loadingRef;
+  animation: 7s ease-in-out 0s 1 fade-out-loadingRef;
   font-weight: 300;
   letter-spacing: 0.02em;
   position: absolute;

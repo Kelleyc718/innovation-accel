@@ -12,10 +12,14 @@
 
 .refloginBtn {
   margin-right: 50px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .reflogoutBtn {
   margin-right: 20px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .refineryLinkBack {
@@ -33,4 +37,6 @@
   align-items: center;
   padding: 1rem;
   margin-right: 10px;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
 }
