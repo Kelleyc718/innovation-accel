@@ -2,6 +2,7 @@ import "../../css/Sensors.css";
 import React from "react";
 
 const SensorFilter = ({ filterSensorData, rul }) => {
+  console.log("the filterSensorData is: ", filterSensorData);
   return (
     <React.Fragment>
       <div className="topCard">
@@ -19,12 +20,12 @@ const SensorFilter = ({ filterSensorData, rul }) => {
       <div className="bottomCard">
         <div className="sensVals">
           <p className="sensorValueType">Vibration (CPM)</p>
-          <p className="sensorValueNumber">{filterSensorData.PSI}</p>
+          <p className="sensorValueNumber">{filterSensorData.VIBRATIONKCPM}</p>
         </div>
 
         <div className="sensVals">
           <p className="sensorValueType">Temperature</p>
-          <p className="sensorValueNumber">{filterSensorData.PSI}</p>
+          <p className="sensorValueNumber">{filterSensorData.TEMPRATURE}</p>
         </div>
       </div>
       <div className="sensRul">
