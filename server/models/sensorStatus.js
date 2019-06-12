@@ -8,5 +8,12 @@ module.exports.getSensorStatus = async () => {
     ) \
     WHERE ROWNUM = 1'
   );
-  return statusResponse;
+  let throughput = statusResponse.rows[0].THROUGHPUTPCT;
+  let statusColor = 'red';
+  if(throughput > 29 && throughput < 60){
+    statusColor = 'yellow';
+  } else if(throughput <= 29){
+    statusColor = 'green';
+  }
+  return { statusColor };
 }
