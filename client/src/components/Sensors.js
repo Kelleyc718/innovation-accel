@@ -2,26 +2,52 @@ import "../css/Sensors.css";
 import React from "react";
 import SensorNav from "./SensorsHelpers/SensorNav";
 import SensorButtonArea from "./SensorsHelpers/SensorButtonArea";
+import SensorFilter from "./SensorsHelpers/SensorFilter";
+import SensorPump from "./SensorsHelpers/SensorPump";
+import SensorDesalter from "./SensorsHelpers/SensorDesalter";
+import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 
 const API_SENSOR_URL = "http://localhost:5000/sensordata";
+const RUL_SENSOR_URL = "http://localhost:5000/sensordata/rul";
 
 class Sensors extends React.Component {
-  state = {
-    sensorData: [],
-    currentModel: "http://127.0.0.1:9000/allTheTests/",
-    left: "-550px"
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sensorData: {},
+      currentModel: "http://127.0.0.1:9000/allTheTests/",
+      leftFilter: "-550px",
+      filOp: "0",
+      pumpOp: "0",
+      desOp: "0",
+      boilOp: "0",
+      leftPump: "-550px",
+      leftDesalter: "-550px",
+      leftBoiler: "-550px",
+      filterSensorData: {},
+      pumpSensorData: {},
+      boilerSensorData: {},
+      desalterSensorData: {},
+      boilerRul: "",
+      pumpRul: "",
+      desalterRul: "",
+      filterRul: ""
+    };
+  }
 
   componentDidMount() {
     this.fetchUrl();
+    this.fetchRul();
   }
 
-  fetchUrl = async () => {
+  fetchUrl = () => {
     try {
-      const response = await fetch(API_SENSOR_URL);
-      const json = await response.json();
-      const data = json.rows;
-      this.handleResults(data);
+      setInterval(async () => {
+        const response = await fetch(API_SENSOR_URL);
+        const json = await response.json();
+        this.handleResults(json);
+      }, 1000);
     } catch (err) {
       console.log(err);
     }
@@ -29,7 +55,31 @@ class Sensors extends React.Component {
 
   handleResults = sensorData => {
     this.setState({
-      sensorData
+      sensorData,
+      filterSensorData: sensorData.filter,
+      pumpSensorData: sensorData.pump,
+      desalterSensorData: sensorData.desalter,
+      boilerSensorData: sensorData.boiler
+    });
+  };
+
+  fetchRul = async () => {
+    try {
+      const response = await fetch(RUL_SENSOR_URL);
+      const json = await response.json();
+      const rul = json.rows;
+      this.handleRulResults(rul);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  handleRulResults = rul => {
+    this.setState({
+      boilerRul: rul[0].RUL,
+      pumpRul: rul[1].RUL,
+      desalterRul: rul[2].RUL,
+      filterRul: rul[4].RUL
     });
   };
 
@@ -37,7 +87,15 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Generator_MayProject/ "
+        currentModel: "http://127.0.0.1:9000/Filter_MayProject/",
+        leftFilter: "-550px",
+        leftDesalter: "-550px",
+        leftBoiler: "-550px",
+        leftPump: "0px",
+        pumpOp: 1,
+        filOp: "0",
+        desOp: "0",
+        boilOp: "0"
       });
     }, 0);
   };
@@ -46,16 +104,32 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Boiler_ProjectMay/"
+        currentModel: "http://127.0.0.1:9000/Boiler_ProjectMay/",
+        leftFilter: "-550px",
+        leftDesalter: "-550px",
+        leftPump: "-550px",
+        leftBoiler: "0px",
+        boilOp: 1,
+        pumpOp: "0",
+        filOp: "0",
+        desOp: "0"
       });
     }, 0);
   };
 
-  onGeneratorClick = e => {
+  onDesalterClick = e => {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Pump_ProjectMay/"
+        currentModel: "http://127.0.0.1:9000/Pump_ProjectMay/",
+        leftFilter: "-550px",
+        leftDesalter: "0px",
+        leftPump: "-550px",
+        leftBoiler: "-550px",
+        desOp: 1,
+        pumpOp: "0",
+        filOp: "0",
+        boilOp: "0"
       });
     }, 0);
   };
@@ -65,15 +139,20 @@ class Sensors extends React.Component {
     setTimeout(() => {
       this.setState({
         currentModel: "http://127.0.0.1:9000/Desalter_MayProject/",
-        left: "0px"
+        leftFilter: "0px",
+        leftPump: "-550px",
+        leftDesalter: "-550px",
+        leftBoiler: "-550px",
+        filOp: 1,
+        pumpOp: "0",
+        desOp: "0",
+        boilOp: "0"
       });
-    }, 0);
+    }, 50);
   };
 
-  setSensorInfoTransition = () => {};
-
   render() {
-    console.log("the state is: ", this.state.sensorData);
+    console.log("the RUL for boiler is: ", this.state.boilerRul);
     return (
       <div className="sensorsPageLayout">
         <SensorNav />
@@ -81,16 +160,52 @@ class Sensors extends React.Component {
           <SensorButtonArea
             onBoilerClick={this.onBoilerClick}
             onPumpClick={this.onPumpClick}
-            onGeneratorClick={this.onGeneratorClick}
+            onDesalterClick={this.onDesalterClick}
             onFilterClick={this.onFilterClick}
           />
         </div>
-        <div style={{ left: this.state.left }} className="sensorCardInfo">
-          <p className="sensorValueType">PSI</p>
-          <p className="sensorValueType">RPM</p>
-          <p className="sensorValueType">Vibration</p>
-          <p className="sensorValueType">Throughput</p>
+
+        <div
+          style={{ left: this.state.leftFilter, opacity: this.state.filOp }}
+          className="sensorCard"
+        >
+          <SensorFilter
+            rul={this.state.filterRul}
+            filterSensorData={this.state.filterSensorData}
+          />
         </div>
+
+        <div
+          style={{ left: this.state.leftPump, opacity: this.state.pumpOp }}
+          className="sensorCard"
+        >
+          <SensorPump
+            rul={this.state.pumpRul}
+            pumpSensorData={this.state.pumpSensorData}
+          />
+        </div>
+
+        <div
+          style={{ left: this.state.leftDesalter, opacity: this.state.desOp }}
+          className="sensorCard"
+        >
+          <SensorDesalter
+            rul={this.state.desalterRul}
+            desalterSensorData={this.state.desalterSensorData}
+          />
+        </div>
+
+        <div
+          style={{ left: this.state.leftBoiler, opacity: this.state.boilOp }}
+          className="sensorCard"
+        >
+          <SensorBoiler
+            rul={this.state.boilerRul}
+            boilerSensorData={this.state.boilerSensorData}
+          />
+        </div>
+
+        <div className="loadRefModel">Creating Refinery...</div>
         <iframe
           className="sensorModelFrame"
           src={this.state.currentModel}

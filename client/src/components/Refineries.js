@@ -1,7 +1,6 @@
 import "../css/Refineries.css";
 import React from "react";
 import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
 import LocationInfo from "./RefineriesHelpers/LocationInfo";
 
 const API_URL = "http://localhost:5000/refs";
