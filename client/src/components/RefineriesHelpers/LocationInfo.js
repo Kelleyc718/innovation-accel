@@ -90,7 +90,9 @@ const LocationInfo = props => {
       if (STATUS === "Yellow") {
         console.log("the STATUS is: ", STATUS);
         return <p>{props.forecast} weeks until service is required</p>;
-      } else if (STATUS === "Yellow") {
+      } else if (STATUS === "Red") {
+        return <p>The refinery is currently offline</p>;
+      } else {
         return <p>The refinery is running according to plan</p>;
       }
     };
