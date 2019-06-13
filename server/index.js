@@ -20,6 +20,9 @@ mongoose.connect(
 // Server setup
 const app = express();
 
+// Static file serving
+app.use('/', express.static(path.join(__dirname, 'assets'))
+
 // Middleware Setup
 app.use("/error", express.static(path.join(__dirname, "/routes/404")));
 app.use("*", cors());
