@@ -21,7 +21,7 @@ mongoose.connect(
 const app = express();
 
 // Static file serving
-app.use('/', express.static(path.join(__dirname, 'assets'))
+app.use('/', express.static(path.join(__dirname, 'assets')));
 
 // Middleware Setup
 app.use("/error", express.static(path.join(__dirname, "/routes/404")));
