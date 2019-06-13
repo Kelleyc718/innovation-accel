@@ -1,6 +1,6 @@
 import "./SensorNav.css";
 import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import { logout } from "../../helpers/auth";
 import { AuthContext } from "../../context/AuthContext";
