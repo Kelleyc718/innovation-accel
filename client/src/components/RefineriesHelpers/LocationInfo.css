@@ -96,10 +96,47 @@
   position: absolute;
   right: 0px;
   transition: right 1s;
-
   /* temp style */
-  margin-right: 112px;
-  margin-top: 50px;
+  margin-right: 90px;
+  margin-top: -25px;
+}
+
+.warningContents {
+  margin-right: 200px;
+  position: relative;
+}
+
+.circleContents {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.circleWarning {
+  position: absolute;
+  height: 180px;
+  width: 200px;
+  filter: opacity(40%);
+}
+
+.warningText {
+  margin-top: 140px;
+  margin-left: 101px;
+  position: absolute;
+  width: 200px;
+  background: -webkit-linear-gradient(#fff, #96bbb2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.forecastNumber {
+  margin-left: 104px;
+  position: absolute;
+  font-size: 120px;
+  margin-top: 3px !important;
+  background: -webkit-linear-gradient(#fff, #96bbb2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .locationInfoCard:hover .rightSide {
