@@ -92,7 +92,6 @@ const LocationInfo = props => {
         console.log("the STATUS is: ", STATUS);
         return (
           <div className="warningContents">
-            <img className="circleWarning" src={warning} alt="warning_image" />
             <div className="circleContents">
               <p className="forecastNumber">{props.forecast}</p>
               <p className="warningText">weeks until service required</p>
