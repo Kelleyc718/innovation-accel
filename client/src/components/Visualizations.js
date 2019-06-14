@@ -8,7 +8,7 @@ const Visualizations = props => {
       <RefNav />
       <iframe
         className="modelFrame"
-        src={`http://localhost:5000/visualizations/?${props.match.params.id}`}
+        src={`http://direful-skin.surge.sh/?${props.match.params.id}`}
         title="Landing Frame"
       />
     </div>

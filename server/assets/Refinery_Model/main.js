@@ -76,7 +76,7 @@ loader.load(
     object.name = "Object 3";
 
     this.tl = new TimelineMax();
-    this.tl.from(ourObj.children[2].position, 6, {
+    this.tl.from(ourObj.children[2].position, 5, {
       x: 75,
       y: 25,
       z: 400,
