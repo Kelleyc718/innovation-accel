@@ -68,6 +68,7 @@
 
 import "./LocationInfo.css";
 import React from "react";
+import warning from "./warning_yellow.png";
 import { Link } from "react-router-dom";
 import StatusBar from "./StatusBar";
 import Countdown from "./Countdown";
@@ -89,11 +90,17 @@ const LocationInfo = props => {
     const setForecast = () => {
       if (STATUS === "Yellow") {
         console.log("the STATUS is: ", STATUS);
-        return <p>{props.forecast} weeks until service is required</p>;
-      } else if (STATUS === "Red") {
-        return <p>The refinery is currently offline</p>;
+        return (
+          <div className="warningContents">
+            <img className="circleWarning" src={warning} alt="warning_image" />
+            <div className="circleContents">
+              <p className="forecastNumber">{props.forecast}</p>
+              <p className="warningText">weeks until service required</p>
+            </div>
+          </div>
+        );
       } else {
-        return <p>The refinery is running according to plan</p>;
+        return;
       }
     };
 
@@ -129,7 +136,7 @@ const LocationInfo = props => {
               </div>
             </div>
             <div className="rightSide">
-              <div className="rightContents">{setForecast()}</div>
+              <div>{setForecast()}</div>
             </div>
           </div>
         </Link>
