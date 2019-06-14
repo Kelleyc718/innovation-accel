@@ -16,7 +16,7 @@ class Sensors extends React.Component {
 
     this.state = {
       sensorData: {},
-      currentModel: "http://127.0.0.1:9000/allTheTests/",
+      currentModel: "http://localhost:5000/Refinery_Model/",
       leftFilter: "-550px",
       filOp: "0",
       pumpOp: "0",
@@ -87,7 +87,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Filter_MayProject/",
+        currentModel: "http://localhost:5000/Filter_Model/",
         leftFilter: "-550px",
         leftDesalter: "-550px",
         leftBoiler: "-550px",
@@ -104,7 +104,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Boiler_ProjectMay/",
+        currentModel: "http://localhost:5000/Boiler_Model/",
         leftFilter: "-550px",
         leftDesalter: "-550px",
         leftPump: "-550px",
@@ -121,7 +121,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Pump_ProjectMay/",
+        currentModel: "http://localhost:5000/Pump_Model/",
         leftFilter: "-550px",
         leftDesalter: "0px",
         leftPump: "-550px",
@@ -138,7 +138,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://127.0.0.1:9000/Desalter_MayProject/",
+        currentModel: "http://localhost:5000/Desalter_Model/",
         leftFilter: "0px",
         leftPump: "-550px",
         leftDesalter: "-550px",
