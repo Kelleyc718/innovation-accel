@@ -134,7 +134,7 @@
   margin-left: 104px;
   position: absolute;
   font-size: 120px;
-  margin-top: 3px !important;
+  margin-top: -15px !important;
   background: -webkit-linear-gradient(#fff, #e2ea50);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
