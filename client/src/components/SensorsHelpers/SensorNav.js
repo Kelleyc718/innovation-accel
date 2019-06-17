@@ -1,5 +1,6 @@
 import "./SensorNav.css";
 import React, { useContext, useEffect } from "react";
+// import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import { logout } from "../../helpers/auth";
 import { AuthContext } from "../../context/AuthContext";
@@ -32,6 +33,11 @@ const SensorNavs = props => {
         </div>
       );
     }
+
+    function onAnalyticsClick() {
+      window.location = "/refineries";
+    }
+
     return (
       <div className="refSensorNavLogout">
         <Button
@@ -40,6 +46,7 @@ const SensorNavs = props => {
           basic
           className="reflogoutBtn"
           target="_blank"
+          onClick={onAnalyticsClick}
         >
           Advanced Analytics
         </Button>

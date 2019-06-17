@@ -205,7 +205,7 @@ class Sensors extends React.Component {
           />
         </div>
 
-        <div className="loadRefModel">Creating Refinery...</div>
+        <div className="loadRefModel">Loading Refinery</div>
         <iframe
           className="sensorModelFrame"
           src={this.state.currentModel}

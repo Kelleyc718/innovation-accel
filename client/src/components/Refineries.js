@@ -4,21 +4,59 @@ import Navbar from "./Navbar";
 import LocationInfo from "./RefineriesHelpers/LocationInfo";
 
 const API_URL = "http://localhost:5000/refs";
+const API_FORECAST = "http://localhost:5000/sensordata/forecasts";
 
 class Refineries extends React.Component {
   state = {
-    refineries: []
+    refineries: [],
+    forecast: ""
   };
 
   componentDidMount() {
     this.fetchUrl();
+    this.fetchForecast();
   }
 
-  fetchUrl = async () => {
+  fetchForecast = () => {
     try {
-      const response = await fetch(API_URL);
-      const json = await response.json();
-      this.handleResults(json);
+      setInterval(async () => {
+        const response = await fetch(API_FORECAST);
+        const json = await response.json();
+        console.log(
+          "the json forecast is: ",
+          json.weeksWithinWhichServicingRequired
+        );
+        const weeks = json.weeksWithinWhichServicingRequired;
+        this.handleForecastResults(weeks);
+      }, 1000);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  handleForecastResults = forecast => {
+    this.setState({
+      forecast
+    });
+  };
+
+  // fetchUrl = async () => {
+  //   try {
+  //     const response = await fetch(API_URL);
+  //     const json = await response.json();
+  //     this.handleResults(json);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  fetchUrl = () => {
+    try {
+      setInterval(async () => {
+        const response = await fetch(API_URL);
+        const json = await response.json();
+        this.handleResults(json);
+      }, 1000);
     } catch (err) {
       console.log(err);
     }
@@ -41,7 +79,10 @@ class Refineries extends React.Component {
       <div className="refBody">
         <Navbar />
         <div className="refineriesCanvas">
-          <LocationInfo refineries={this.state.refineries} />
+          <LocationInfo
+            forecast={this.state.forecast}
+            refineries={this.state.refineries}
+          />
           <div className="loadingCards">Loading</div>
         </div>
       </div>

@@ -11,6 +11,8 @@
 
 .loginBtn {
   margin-right: 50px !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
 }
 
 .navLogout {
@@ -22,4 +24,9 @@
   justify-content: flex-end;
   align-items: center;
   padding: 1rem;
+}
+
+.logoutBtn {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 300 !important;
 }
