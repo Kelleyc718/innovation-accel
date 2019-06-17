@@ -50,16 +50,24 @@ module.exports.getForecasts = async () => {
   let predictionsCount = await dbConnection.performQuery(
     "select max(rownum) from predicted_data"
   );
-
+  
   let confidenceRatio = confidenceOfOneCount / predictionsCount;
+    console.log("###################");
+    console.log(predictionsCount);
+    console.log(typeof(predictionsCount));
+    console.log(confidenceRatio);
+    console.log("###################");
 
   // how soon does it need to be repaired
-  let weeksWithinWhichServicingRequired = 12;
+  let weeksWithinWhichServicingRequired = 4;
 
   if (confidenceRatio > 0.8) {
     weeksWithinWhichServicingRequired = 2;
   } else if (confidenceRatio > 0.6) {
     weeksWithinWhichServicingRequired = 4;
+  }
+  else{
+    weeksWithinWhichServicingRequired = 12
   }
 
   return { weeksWithinWhichServicingRequired };
