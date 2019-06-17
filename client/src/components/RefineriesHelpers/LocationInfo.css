@@ -114,9 +114,10 @@
 
 .circleWarning {
   position: absolute;
+  border-radius: 50%;
   height: 180px;
   width: 200px;
-  filter: opacity(40%);
+  filter: opacity(20%);
 }
 
 .warningText {
@@ -124,7 +125,7 @@
   margin-left: 101px;
   position: absolute;
   width: 200px;
-  background: -webkit-linear-gradient(#fff, #96bbb2);
+  background: -webkit-linear-gradient(#fff, #e2ea50);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -133,8 +134,8 @@
   margin-left: 104px;
   position: absolute;
   font-size: 120px;
-  margin-top: 3px !important;
-  background: -webkit-linear-gradient(#fff, #96bbb2);
+  margin-top: -15px !important;
+  background: -webkit-linear-gradient(#fff, #e2ea50);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
