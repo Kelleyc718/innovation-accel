@@ -27,9 +27,10 @@ module.exports.getForecasts = async () => {
     ]
   }
   */
-  let confidenceOfOneCount = await dbConnection.performQuery(
+  let confidenceOfOneCountResult = await dbConnection.performQuery(
     "select count(PREDICTEDVALUE) from predicted_data where PREDICTIONCONFIDENCE = 1"
   );
+  let confidenceOfOneCount = confidenceOfOneCountResult.rows[0]['COUNT(PREDICTEDVALUE)'];
 
   /* predictionsCount=
   call to get count of predictions
@@ -47,17 +48,14 @@ module.exports.getForecasts = async () => {
     ]
   }
   */
-  let predictionsCount = await dbConnection.performQuery(
+  let predictionsCountResult = await dbConnection.performQuery(
     "select max(rownum) from predicted_data"
   );
-  
-  let confidenceRatio = confidenceOfOneCount / predictionsCount;
-    console.log("###################");
-    console.log(predictionsCount);
-    console.log(typeof(predictionsCount));
-    console.log(confidenceRatio);
-    console.log("###################");
+  let predictionsCount = predictionsCountResult.rows[0]['MAX(ROWNUM)'];
 
+
+  let confidenceRatio = confidenceOfOneCount / predictionsCount;
+    
   // how soon does it need to be repaired
   let weeksWithinWhichServicingRequired = 4;
 
