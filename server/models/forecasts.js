@@ -56,7 +56,7 @@ module.exports.getForecasts = async () => {
   // how soon does it need to be repaired
   let weeksWithinWhichServicingRequired = 12;
 
-  if (confidenceRatio > 0.75) {
+  if (confidenceRatio > 0.8) {
     weeksWithinWhichServicingRequired = 2;
   } else if (confidenceRatio > 0.6) {
     weeksWithinWhichServicingRequired = 4;
