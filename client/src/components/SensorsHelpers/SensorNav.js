@@ -42,7 +42,7 @@ const SensorNavs = props => {
       <div className="refSensorNavLogout">
         <Button
           inverted={!fixed}
-          href="https://innovateaccelv2-orasenatdpltoci02.analytics.ocp.oraclecloud.com/dv/ui?pageid=visualAnalyzer&reportpath=%2Fusers%2Fmanta%2FLive_Sensor_Data"
+          href="https://innovateaccelv2-orasenatdpltoci02.analytics.ocp.oraclecloud.com/dv/ui?pageid=visualAnalyzer&reportpath=%2Fusers%2Fmanta%2FRefinery"
           basic
           className="reflogoutBtn"
           target="_blank"
