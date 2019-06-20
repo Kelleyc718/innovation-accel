@@ -41,6 +41,7 @@ class Sensors extends React.Component {
     this.fetchRul();
   }
 
+  // Calling backend for sensor data
   fetchUrl = () => {
     try {
       setInterval(async () => {
@@ -53,6 +54,7 @@ class Sensors extends React.Component {
     }
   };
 
+  // Set state for sensor data after fetching data
   handleResults = sensorData => {
     this.setState({
       sensorData,
@@ -63,6 +65,7 @@ class Sensors extends React.Component {
     });
   };
 
+  // Calling backend for Remaining Useful Life
   fetchRul = async () => {
     try {
       const response = await fetch(RUL_SENSOR_URL);
@@ -74,6 +77,7 @@ class Sensors extends React.Component {
     }
   };
 
+  // Setting state after call for Remaining Useful Life
   handleRulResults = rul => {
     this.setState({
       boilerRul: rul[0].RUL,
@@ -218,8 +222,8 @@ class Sensors extends React.Component {
 
 export default Sensors;
 
-// This is grabbing the data from each individual machine
 // The code above is currently passing the IOT live pump data to each
+// THe code below is grabbing the data from each individual machine
 
 // import "../css/Sensors.css";
 // import React from "react";

@@ -40,16 +40,6 @@ class Refineries extends React.Component {
     });
   };
 
-  // fetchUrl = async () => {
-  //   try {
-  //     const response = await fetch(API_URL);
-  //     const json = await response.json();
-  //     this.handleResults(json);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   fetchUrl = () => {
     try {
       setInterval(async () => {
