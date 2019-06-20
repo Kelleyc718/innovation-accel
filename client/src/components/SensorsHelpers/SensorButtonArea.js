@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 
+// This will determine the status of the specific machine and return the button color as yellow
+// if there is maintenance required soon
 const WARNING_API_URL = "http://localhost:5000/sensordata/sensorbutton";
 
 class SensorButtonArea extends React.Component {
@@ -9,10 +11,6 @@ class SensorButtonArea extends React.Component {
     desalterWarning: "green",
     pumpWarning: "green",
     filterWarning: "green"
-    // boilerBasic: "basic",
-    // desalterBasic: "basic",
-    // pumpBasic: "basic",
-    // filterBasic: "basic"
   };
 
   componentDidMount() {
@@ -35,25 +33,21 @@ class SensorButtonArea extends React.Component {
     if (rows[0].COUT >= 300) {
       this.setState({
         pumpWarning: "yellow"
-        // pumpBasic: false
       });
     }
     if (rows[1].COUT >= 300) {
       this.setState({
         boilerWarning: "yellow"
-        // boilerBasic: false
       });
     }
     if (rows[2].COUT >= 300) {
       this.setState({
         desalterWarning: "yellow"
-        // desalterBasic: false
       });
     }
     if (rows[5].COUT >= 300) {
       this.setState({
         filterWarning: "yellow"
-        // filterBasic: false
       });
     }
   };
