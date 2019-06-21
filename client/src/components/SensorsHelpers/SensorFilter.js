@@ -19,8 +19,8 @@ const SensorFilter = ({ filterSensorData, rul }) => {
 
       <div className="bottomCard">
         <div className="sensVals">
-          <p className="sensorValueType">Vibration (CPM)</p>
-          <p className="sensorValueNumber">{filterSensorData.VIBRATIONKCPM}</p>
+          <p className="sensorValueType">Humidity</p>
+          <p className="sensorValueNumber">{filterSensorData.HUMIDITY}</p>
         </div>
 
         <div className="sensVals">

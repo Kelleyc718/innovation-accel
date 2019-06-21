@@ -24,10 +24,8 @@ const SensorDesalter = ({ desalterSensorData, rul }) => {
         </div>
 
         <div className="sensVals">
-          <p className="sensorValueType">Vibration (CPM)</p>
-          <p className="sensorValueNumber">
-            {desalterSensorData.VIBRATIONKCPM}
-          </p>
+          <p className="sensorValueType">Humidity</p>
+          <p className="sensorValueNumber">{desalterSensorData.HUMIDITY}</p>
         </div>
       </div>
 

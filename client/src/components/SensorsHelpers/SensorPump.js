@@ -24,8 +24,8 @@ const SensorPump = ({ pumpSensorData, rul }) => {
         </div>
 
         <div className="sensVals">
-          <p className="sensorValueType">Vibration (CPM)</p>
-          <p className="sensorValueNumber">{pumpSensorData.VIBRATIONKCPM}</p>
+          <p className="sensorValueType">Humidity</p>
+          <p className="sensorValueNumber">{pumpSensorData.HUMIDITY}</p>
         </div>
       </div>
 
