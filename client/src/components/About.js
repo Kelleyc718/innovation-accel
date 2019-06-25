@@ -88,7 +88,7 @@ export default About => {
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
                   <Card.Description>
-                    Database and Machine Learning Lead
+                    <a>Database and Machine Learning Lead</a>
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -109,7 +109,10 @@ export default About => {
                   <Card.Meta>
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
-                  <Card.Description>Frontend Lead</Card.Description>
+                  <Card.Description>
+                    Github:
+                    <a href="https://github.com/salmanrrana">salmanrrana</a>
+                  </Card.Description>
                 </Card.Content>
               </Card>
               <Card>
