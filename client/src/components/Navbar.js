@@ -1,5 +1,6 @@
 import "../css/Navbar.css";
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import { logout } from "../helpers/auth";
 import { AuthContext } from "../context/AuthContext";
@@ -20,6 +21,12 @@ const Navbar = props => {
     if (!state.user) {
       return (
         <div className="nav">
+          <Link className="navLink" to="/">
+            Home
+          </Link>
+          <Link className="navLink" to="/about">
+            About
+          </Link>
           <Button href="/auth" className="loginBtn" basic inverted color="red">
             Log In
           </Button>
