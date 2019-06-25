@@ -86,6 +86,10 @@
   flex-direction: column;
 }
 
+.stateText {
+  font-size: 1.5em;
+}
+
 @keyframes fade-in-marketingSection {
   from {
     opacity: 0;
@@ -129,6 +133,11 @@
 
 .teamHeader {
   color: #ffffffe1 !important;
+  text-align: center;
+}
+
+.marketText {
+  margin-bottom: 10px !important;
 }
 
 .ui.cards {

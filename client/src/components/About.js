@@ -9,6 +9,7 @@ import {
   Segment,
   Card
 } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export default About => {
@@ -16,7 +17,7 @@ export default About => {
     <div className="aboutBody">
       <Navbar />
 
-      <Segment className="statementSection" id="features" vertical>
+      <Segment className="statementSection" vertical>
         <Grid container stackable verticalAlign="middle">
           <Grid.Row>
             <Grid.Column textAlign="center">
@@ -25,36 +26,36 @@ export default About => {
                   Reduce Costs
                 </Header>
               </Divider>
-              <p className="teamHeader">
-                Utilizing Historical Data for Predictive Maintenance
-              </p>
-              <p className="teamHeader">
+              <p className="teamHeader stateText">
                 Harnessing Machine Learning for Shelf Life Determination
+              </p>
+              <p className="teamHeader stateText">
+                Utilizing Historical Data for Predictive Maintenance
               </p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Segment>
 
-      <Segment className="marketingSection" id="features" inverted vertical>
+      <Segment className="marketingSection" inverted vertical>
         <Grid container stackable verticalAlign="middle">
           <Grid.Row />
           <Grid.Row>
             <Grid.Column width={6}>
-              <Header className="teamHeader" as="h3">
+              <Header className="teamHeader marketText" as="h3">
                 Intuitive Platform for All Users
               </Header>
-              <p>
+              <p className="teamHeader">
                 A Cloud Solution for a centralized platform to monitor a
                 multi-refinery ecosystem and perform predicted maintenance on
                 its machinery.
               </p>
             </Grid.Column>
             <Grid.Column floated="right" width={6}>
-              <Header className="teamHeader" as="h3">
+              <Header className="teamHeader marketText" as="h3">
                 Agile, Effective, Scalable
               </Header>
-              <p>
+              <p className="teamHeader">
                 A centralized platform will in turn let them not just monitor
                 the live status of their refineries but also make insightful
                 decisions based on advanced analytics.
@@ -64,7 +65,7 @@ export default About => {
         </Grid>
       </Segment>
 
-      <Segment className="ourTeamSection" id="about-us" vertical>
+      <Segment className="ourTeamSection" vertical>
         <Container text>
           <Grid.Column width={2}>
             <Divider className="ourTeam" horizontal>
