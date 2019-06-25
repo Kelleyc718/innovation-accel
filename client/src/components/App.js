@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import Landing from "./Landing";
+import About from "./About";
 import Login from "./Login";
 import LoginCallback from "./LoginCallback";
 import Refineries from "./Refineries";
@@ -17,6 +18,7 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route path="/" exact component={Landing} />
+            <Route path="/about" exact component={About} />
             <Route path="/login" exact component={Login} />
             <Route path="/callback" component={LoginCallback} />
             <PrivateRoute path="/refineries" exact component={Refineries} />
