@@ -7,9 +7,10 @@ import {
   Header,
   Image,
   Segment,
+  Icon,
   Card
 } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export default About => {
@@ -88,7 +89,12 @@ export default About => {
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
                   <Card.Description>
-                    <a>Database and Machine Learning Lead</a>
+                    <a href="https://github.com/rkane2342">
+                      <Icon size="large" color="black" name="github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/rohit-kurhekar-5b627779/">
+                      <Icon size="large" color="black" name="linkedin" />
+                    </a>
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -99,7 +105,14 @@ export default About => {
                   <Card.Meta>
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
-                  <Card.Description>Backend Lead</Card.Description>
+                  <Card.Description>
+                    <a href="https://github.com/ranched">
+                      <Icon size="large" color="black" name="github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/jason-s-mclaughlin/">
+                      <Icon size="large" color="black" name="linkedin" />
+                    </a>
+                  </Card.Description>
                 </Card.Content>
               </Card>
               <Card>
@@ -110,8 +123,12 @@ export default About => {
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
                   <Card.Description>
-                    Github:
-                    <a href="https://github.com/salmanrrana">salmanrrana</a>
+                    <a href="https://github.com/salmanrrana">
+                      <Icon size="large" color="black" name="github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/salmanrrana/">
+                      <Icon size="large" color="black" name="linkedin" />
+                    </a>
                   </Card.Description>
                 </Card.Content>
               </Card>
@@ -122,7 +139,14 @@ export default About => {
                   <Card.Meta>
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
-                  <Card.Description>Project Manager</Card.Description>
+                  <Card.Description>
+                    <a href="https://github.com/Kelleyc718">
+                      <Icon size="large" color="black" name="github" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/chrisdkelley/">
+                      <Icon size="large" color="black" name="linkedin" />
+                    </a>
+                  </Card.Description>
                 </Card.Content>
               </Card>
               <Card>
@@ -132,7 +156,11 @@ export default About => {
                   <Card.Meta>
                     <span className="date">Solution Engineer</span>
                   </Card.Meta>
-                  <Card.Description>Advisor</Card.Description>
+                  <Card.Description>
+                    <a href="https://www.linkedin.com/in/markwilsmith/">
+                      <Icon size="large" color="black" name="linkedin" />
+                    </a>
+                  </Card.Description>
                 </Card.Content>
               </Card>
             </Card.Group>
