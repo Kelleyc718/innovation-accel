@@ -86,7 +86,6 @@ const Login = () => {
                 />
                 <Button
                   basic
-                  color="#FFFFFF"
                   fluid
                   size="large"
                   onClick={handleSubmit}
