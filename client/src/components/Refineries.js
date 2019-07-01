@@ -58,12 +58,6 @@ class Refineries extends React.Component {
     });
   };
 
-  handleOnLoad = () => {
-    this.setState({
-      isLoading: false
-    });
-  };
-
   render() {
     return (
       <div className="refBody">
