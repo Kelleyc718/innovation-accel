@@ -16,7 +16,7 @@ class Sensors extends React.Component {
 
     this.state = {
       sensorData: {},
-      currentModel: "http://macabre-fear.surge.sh/",
+      currentModel: "http://certain-card.surge.sh/",
       leftFilter: "-550px",
       filOp: "0",
       pumpOp: "0",
@@ -91,7 +91,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://grateful-advice.surge.sh/",
+        currentModel: "http://knowing-snail.surge.sh/",
         leftFilter: "-550px",
         leftDesalter: "-550px",
         leftBoiler: "-550px",
@@ -108,7 +108,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://dear-copper.surge.sh/",
+        currentModel: "http://secret-mind.surge.sh/",
         leftFilter: "-550px",
         leftDesalter: "-550px",
         leftPump: "-550px",
@@ -125,7 +125,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://honorable-process.surge.sh/",
+        currentModel: "http://nutritious-stamp.surge.sh/",
         leftFilter: "-550px",
         leftDesalter: "0px",
         leftPump: "-550px",
@@ -142,7 +142,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://recondite-insect.surge.sh/",
+        currentModel: "http://perpetual-cakes.surge.sh/",
         leftFilter: "0px",
         leftPump: "-550px",
         leftDesalter: "-550px",
@@ -209,7 +209,6 @@ class Sensors extends React.Component {
           />
         </div>
 
-        <div className="loadRefModel">Loading Refinery</div>
         <iframe
           className="sensorModelFrame"
           src={this.state.currentModel}
