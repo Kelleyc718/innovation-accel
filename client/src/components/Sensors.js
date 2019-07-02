@@ -125,7 +125,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://nutritious-stamp.surge.sh/",
+        currentModel: "http://lyrical-payment.surge.sh/",
         leftFilter: "-550px",
         leftDesalter: "0px",
         leftPump: "-550px",
@@ -142,7 +142,7 @@ class Sensors extends React.Component {
     e.preventDefault();
     setTimeout(() => {
       this.setState({
-        currentModel: "http://perpetual-cakes.surge.sh/",
+        currentModel: "http://auspicious-bells.surge.sh/",
         leftFilter: "0px",
         leftPump: "-550px",
         leftDesalter: "-550px",
