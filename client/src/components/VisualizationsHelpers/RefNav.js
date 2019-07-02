@@ -50,7 +50,7 @@ const RefNav = props => {
           color="grey"
           className="reflogoutBtn"
         >
-          Sensors
+          Equipment
         </Button>
         <Button
           onClick={() => logout()}

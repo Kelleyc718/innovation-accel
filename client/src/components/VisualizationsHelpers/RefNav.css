@@ -25,7 +25,13 @@
 
 .refNavLogout {
   position: absolute;
-
+  background-image: linear-gradient(
+    to right,
+    #0c0f0fa5,
+    #0c0f0fa5,
+    #121a1aa5,
+    #2e3834a5
+  );
   height: 85px;
   width: 100%;
   z-index: 2;

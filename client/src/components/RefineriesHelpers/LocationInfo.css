@@ -34,10 +34,10 @@
 .locationInfoCard {
   font-family: "Montserrat", sans-serif;
   animation: 1.5s ease-in-out 0s 1 fade-in-card;
-  width: 400px;
+  width: 375px;
   height: 350px;
   border-radius: 2px;
-  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.15);
   margin: 50px;
   color: white;
   display: flex;
@@ -45,15 +45,18 @@
   box-sizing: border-box;
   justify-content: space-between;
 
-  /* 2 below temp */
   position: relative;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .locationNameTitle {
   font-weight: 500;
   letter-spacing: 0.03em;
   margin-top: 20px !important;
+  background: -webkit-linear-gradient(#fff, #8e9695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .locationStateTitle {
@@ -61,10 +64,14 @@
   letter-spacing: 0.04em;
   margin: 20px !important;
   padding: 10px;
+  background: -webkit-linear-gradient(#fff, #96bbb2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .locationInfoCard:hover {
-  box-shadow: 2px 2px 10px 1px rgba(255, 255, 255, 0.4);
+  box-shadow: 2px 2px 10px 1px rgba(255, 255, 255, 0.3);
+
   cursor: pointer;
 }
 
@@ -74,31 +81,83 @@
   flex-direction: column;
 }
 
-.bottomRefBody {
-  /* 2 below temp */
+.leftSide {
   position: absolute;
   left: -400px;
-
   transition: left 1s;
 }
 
-.locationInfoCard:hover .bottomRefBody {
+.locationInfoCard:hover .leftSide {
   transition: 1s;
   left: 0;
 }
 
+.rightSide {
+  position: absolute;
+  right: 0px;
+  transition: right 1s;
+  /* temp style */
+  margin-right: 90px;
+  margin-top: -25px;
+}
+
+.warningContents {
+  margin-right: 200px;
+  position: relative;
+}
+
+.circleContents {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.circleWarning {
+  position: absolute;
+  border-radius: 50%;
+  height: 180px;
+  width: 200px;
+  filter: opacity(20%);
+}
+
+.warningText {
+  margin-top: 140px;
+  margin-left: 101px;
+  position: absolute;
+  width: 200px;
+  background: -webkit-linear-gradient(#fff, #e2ea50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.forecastNumber {
+  margin-left: 104px;
+  position: absolute;
+  font-size: 120px;
+  margin-top: -15px !important;
+  background: -webkit-linear-gradient(#fff, #e2ea50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-margin-left: 180px;
+}
+
+.locationInfoCard:hover .rightSide {
+  transition: 1s;
+  right: -400px;
+}
+
 .statusBarGreen {
-  background-color: #7fc482;
+  background-color: #39cc62;
   border-radius: 2px 2px 0 0;
 }
 
 .statusBarRed {
-  background-color: #cf5c36;
+  background-color: #f73d00;
   border-radius: 2px 2px 0 0;
 }
 
 .statusBarYellow {
-  background-color: #f2f79e;
+  background-color: #e2ea50;
   border-radius: 2px 2px 0 0;
 }
 
@@ -114,6 +173,9 @@
   font-weight: bold;
   margin-left: 185px;
   float: inherit;
+  background: -webkit-linear-gradient(#fff, #8e9695);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 ul {
@@ -128,4 +190,7 @@ ul {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.02em;
+  background: -webkit-linear-gradient(#fff, #96bbb2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

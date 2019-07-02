@@ -11,7 +11,7 @@ const jwt = require("jsonwebtoken"),
 function redirectBrowser(req, res, url, payload) {
   res.statusCode = 200;
 
-  oauth.getAT().then(function (accessToken) {
+  oauth.getAT().then(function(accessToken) {
     res.setHeader("Content-Type", "text/html");
     res.write('<script language="JavaScript">\n');
 
@@ -41,14 +41,14 @@ function redirectBrowser(req, res, url, payload) {
     res.write('sessionStorage.setItem("signinAT", "' + accessToken + '");\n');
     res.write(
       'sessionStorage.setItem("baseUri", "' +
-      config.oracle.AudienceServiceUrl +
-      '");\n'
+        config.oracle.AudienceServiceUrl +
+        '");\n'
     );
     if (config.oracle.ClientSelfReg) {
       res.write(
         'sessionStorage.setItem("selfRegProfiles", "' +
-        config.oracle.ClientSelfReg +
-        '");\n'
+          config.oracle.ClientSelfReg +
+          '");\n'
       );
     }
     res.write(
@@ -59,20 +59,20 @@ function redirectBrowser(req, res, url, payload) {
     for (var field in payload) {
       res.write(
         'sessionStorage.setItem("' +
-        field +
-        "\",'" +
-        payload[field].replace(/'/g, "\\'") +
-        "');\n"
+          field +
+          "\",'" +
+          payload[field].replace(/'/g, "\\'") +
+          "');\n"
       );
     }
     // finally send the user to the requested URL
     res.write('window.location = "' + url + '";\n');
-    res.write('document.write("You should be redirected in a moment...");\n');
+    // res.write('document.write("You should be redirected in a moment...");\n');
 
     // this closes out the try block above
     res.write("}\n");
     res.write("catch(err) {\n");
-    res.write('document.write("Something went wrong.");\n');
+    // res.write('document.write("Something went wrong.");\n');
     res.write("}\n");
 
     res.write("</script>\n\n");
@@ -169,7 +169,7 @@ exports.authUser = (req, res, next) => {
       error: "Unauthorized: No token provided"
     });
   } else {
-    jwt.verify(token, config.server.APP_SEC, function (err, user) {
+    jwt.verify(token, config.server.APP_SEC, function(err, user) {
       if (err) {
         res.status(404).send({
           error: "Unauthorized: Invalid token"
