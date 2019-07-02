@@ -138,6 +138,7 @@
   background: -webkit-linear-gradient(#fff, #e2ea50);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-margin-left: 180px;
 }
 
 .locationInfoCard:hover .rightSide {
