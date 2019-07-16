@@ -1,9 +1,12 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 
+// Needed for locahost dev environment, nginx will do redirects in production
+const localhostBackendPortNumber = window.location.hostname == 'localhost' ? ':5000' : '';
+
 // This will determine the status of the specific machine and return the button color as yellow
 // if there is maintenance required soon
-const WARNING_API_URL = "http://" + window.location.hostname + "/sensordata/sensorbutton";
+const WARNING_API_URL = "http://" + window.location.hostname + localhostBackendPortNumber + "/sensordata/sensorbutton";
 
 class SensorButtonArea extends React.Component {
   state = {

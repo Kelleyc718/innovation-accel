@@ -7,8 +7,11 @@ import SensorPump from "./SensorsHelpers/SensorPump";
 import SensorDesalter from "./SensorsHelpers/SensorDesalter";
 import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 
-const API_SENSOR_URL = "http://" + window.location.hostname + "/sensordata";
-const RUL_SENSOR_URL = "http://" + window.location.hostname + "/sensordata/rul";
+// Needed for locahost dev environment, nginx will do redirects in production
+const localhostBackendPortNumber = window.location.hostname == 'localhost' ? ':5000' : '';
+
+const API_SENSOR_URL = "http://" + window.location.hostname + localhostBackendPortNumber + "/sensordata";
+const RUL_SENSOR_URL = "http://" + window.location.hostname + localhostBackendPortNumber + "/sensordata/rul";
 
 class Sensors extends React.Component {
   constructor(props) {
@@ -233,8 +236,8 @@ export default Sensors;
 // import SensorDesalter from "./SensorsHelpers/SensorDesalter";
 // import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 //
-// const API_SENSOR_URL = "http://" + window.location.hostname + "/sensordata";
-// const RUL_SENSOR_URL = "http://" + window.location.hostname + "/sensordata/rul";
+// const API_SENSOR_URL = "http://" + window.location.host + "/sensordata";
+// const RUL_SENSOR_URL = "http://" + window.location.host + "/sensordata/rul";
 //
 // class Sensors extends React.Component {
 //   constructor(props) {

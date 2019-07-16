@@ -4,9 +4,12 @@ import { Dimmer, Loader } from "semantic-ui-react";
 import Navbar from "./Navbar";
 import LocationInfo from "./RefineriesHelpers/LocationInfo";
 
-const API_URL = "http://" + window.location.hostname + "/refs";
-const API_FORECAST = "http://" + window.location.hostname + "/sensordata/forecasts";
+// Needed for locahost dev environment, nginx will do redirects in production
+const localhostBackendPortNumber = window.location.hostname == 'localhost' ? ':5000' : '';
 
+const API_URL = "http://" + window.location.hostname + localhostBackendPortNumber + "/refs";
+const API_FORECAST = "http://" + window.location.hostname + localhostBackendPortNumber +"/sensordata/forecasts";
+console.log(API_URL, API_FORECAST);
 class Refineries extends React.Component {
   state = {
     refineries: [],
