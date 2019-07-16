@@ -8,7 +8,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       localStorage.getItem("user") ? (
         <Component {...props} />
       ) : (
-        (window.location = "http://localhost:3000/auth")
+        (window.location = window.location.hostname + "/auth")
       )
     }
   />

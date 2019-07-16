@@ -2,6 +2,7 @@ version: "3"
   
 services:
   backend:
+    container_name: backend
     build: ./server
     ports:
       - "8080:5000"
@@ -18,6 +19,7 @@ services:
       - NODE_ORACLEDB_PASSWORD
       - NODE_ORACLEDB_CONNECTIONSTRING
   frontend:
+    container_name: frontend
     build: ./client
     ports:
       - 80:80
