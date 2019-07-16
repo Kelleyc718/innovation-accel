@@ -7,8 +7,8 @@ import SensorPump from "./SensorsHelpers/SensorPump";
 import SensorDesalter from "./SensorsHelpers/SensorDesalter";
 import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 
-const API_SENSOR_URL = "http://localhost:5000/sensordata";
-const RUL_SENSOR_URL = "http://localhost:5000/sensordata/rul";
+const API_SENSOR_URL = "http://" + window.location.hostname + "/sensordata";
+const RUL_SENSOR_URL = "http://" + window.location.hostname + "/sensordata/rul";
 
 class Sensors extends React.Component {
   constructor(props) {
@@ -233,8 +233,8 @@ export default Sensors;
 // import SensorDesalter from "./SensorsHelpers/SensorDesalter";
 // import SensorBoiler from "./SensorsHelpers/SensorBoiler";
 //
-// const API_SENSOR_URL = "http://localhost:5000/sensordata";
-// const RUL_SENSOR_URL = "http://localhost:5000/sensordata/rul";
+// const API_SENSOR_URL = "http://" + window.location.hostname + "/sensordata";
+// const RUL_SENSOR_URL = "http://" + window.location.hostname + "/sensordata/rul";
 //
 // class Sensors extends React.Component {
 //   constructor(props) {

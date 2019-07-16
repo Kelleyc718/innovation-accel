@@ -4,8 +4,8 @@ import { Dimmer, Loader } from "semantic-ui-react";
 import Navbar from "./Navbar";
 import LocationInfo from "./RefineriesHelpers/LocationInfo";
 
-const API_URL = "http://localhost:5000/refs";
-const API_FORECAST = "http://localhost:5000/sensordata/forecasts";
+const API_URL = "http://" + window.location.hostname + "/refs";
+const API_FORECAST = "http://" + window.location.hostname + "/sensordata/forecasts";
 
 class Refineries extends React.Component {
   state = {

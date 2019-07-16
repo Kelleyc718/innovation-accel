@@ -3,7 +3,7 @@ import { Button } from "semantic-ui-react";
 
 // This will determine the status of the specific machine and return the button color as yellow
 // if there is maintenance required soon
-const WARNING_API_URL = "http://localhost:5000/sensordata/sensorbutton";
+const WARNING_API_URL = "http://" + window.location.hostname + "/sensordata/sensorbutton";
 
 class SensorButtonArea extends React.Component {
   state = {
