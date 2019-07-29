@@ -30,10 +30,12 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY ./nginxReactRouter.conf /etc/nginx/conf.d/nginxReactRouter.conf
 
 #make a directory for the certs, set permissions, and copy certs to container
-RUN mkdir /etc/nginx/ssl
+RUN mkdir /etc/nginx/snippets
 RUN chown -R root:root /etc/nginx/ssl
 RUN chmod -R 600 /etc/nginx/ssl
-COPY ./certs/* /etc/nginx/ssl/
+COPY ./certs/ssl/* /etc/nginx/ssl/
+COPY ./certs/snippets/* /etc/nginx/snippets/
+
 
 #change to the app directory
 WORKDIR /usr/src/app

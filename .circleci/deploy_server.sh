@@ -17,8 +17,9 @@ git clone https://github.com/Kelleyc718/innovation-accel.git
 #Copy the wallet file into the code directory structure
 cp config/wallet/* innovation-accel/server/wallet
 
-#Copy the certe into the code directory structure
-cp config/certs/* innovation-accel/client/certs
+#Copy the certs and ssl config into the code directory structure
+cp -R config/snippets innovation-accel/client/certs/
+cp -R config/ssl innovation-accel/client/certs/
 
 #Change directories into the project's directory and bring up the
 #Docker containers
