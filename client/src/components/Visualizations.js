@@ -1,6 +1,6 @@
 import "../css/Visualizations.css";
 import React, { useState } from "react";
-import { Dimmer, Segment, Loader } from "semantic-ui-react";
+import { Dimmer, Loader } from "semantic-ui-react";
 
 import RefNav from "./VisualizationsHelpers/RefNav";
 

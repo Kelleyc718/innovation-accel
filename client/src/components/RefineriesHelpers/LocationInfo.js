@@ -5,8 +5,6 @@ import StatusBar from "./StatusBar";
 import Countdown from "./Countdown";
 
 const LocationInfo = props => {
-  console.log("the forecast is: ", props.forecast);
-  console.log("the style is: ", props.onLoad);
   const list = props.refineries.map(refinery => {
     const {
       REID,
@@ -43,7 +41,6 @@ const LocationInfo = props => {
               OperatorName: NAME
             }
           }}
-          s
         >
           <StatusBar calculation={STATUS} />
           <div className="locationName">

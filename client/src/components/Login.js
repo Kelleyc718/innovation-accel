@@ -28,8 +28,12 @@ const Login = () => {
       return;
     }
 
+    //setActive is for the loading spinner
     setActive(true);
+    // prevent the page from reloading
     e.preventDefault();
+    //get the sessionStorage data loaded from the login button
+    // and the current username and password entered in the form
     let data = {
       clientId: sessionStorage.getItem("clientId"),
       initialState: sessionStorage.getItem("initialState"),
@@ -39,11 +43,17 @@ const Login = () => {
       password: password
     };
 
+    //try and go through the preocess
     try {
+      // async call to the loginApp sdk
       await loginApp.sdk.authenticate(data).then(res => {
+        //if an error is returned with "failed"
         if (res.status === "failed") {
+          // return the error to us
           return setError(error);
         }
+        //no return statement needed here - now authenticated
+        //idcs will navigate us to the ref page from here
       });
     } catch (error) {
       return error;
